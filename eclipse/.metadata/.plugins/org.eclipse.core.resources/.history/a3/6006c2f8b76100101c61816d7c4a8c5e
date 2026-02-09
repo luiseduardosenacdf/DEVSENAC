@@ -1,0 +1,18 @@
+package aula02_15_07_2025;
+
+public class main {
+
+    public main(String[] args) {
+        Carro carro1 = new Carro();
+        carro1.marca = "Pegout";
+        carro1.modelo = "208";
+        carro1.cor = "Preto";
+        carro1.potencia = "600cv";
+        carro1.placa = "JDK-2021";
+        carro1.portas = 4;
+        carro1.preco = 80000.00;
+        carro1.chassi = "asdfasdfasdf";
+
+        carro1.exibirDetalhes();
+    }
+}

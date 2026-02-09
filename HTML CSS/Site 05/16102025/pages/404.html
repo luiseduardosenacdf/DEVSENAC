@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Erro 404 — Página não encontrada</title>
+  <meta name="description" content="Página não encontrada — Explore Brasília" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <nav class="navbar navbar-expand-lg fixed-top navbar-transparent">
+      <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center" href="../index.html">
+          <img src="../img/icons/icon.png" width="50" height="50" alt="Logo Explore Brasília" loading="lazy" />
+          <span class="ms-2 d-none d-lg-inline">Explore Brasília</span>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+          aria-controls="offcanvasNavbar" aria-label="Abrir menu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+          <div class="offcanvas-header">
+            <h5 id="offcanvasNavbarLabel">Menu</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Fechar"></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+              <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="servicos.html">Serviços</a></li>
+              <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+              <li class="nav-item"><a class="nav-link" href="sobre.html">Sobre</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="d-flex align-items-center ms-2">
+          <a href="../login/login.html" class="btn btn-outline-primary me-2">Login</a>
+          <a href="/logoff" style="display:none" class="btn btn-outline-secondary">Sair</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- MAIN -->
+  <main class="container d-flex flex-column justify-content-center align-items-center text-center" style="padding-top: 130px; padding-bottom: 4rem;">
+    <img src="../img/icons/icon.png" width="100" height="100" alt="Ícone de erro" class="mb-4" loading="lazy" />
+    <h1 class="display-4 fw-bold">Erro 404</h1>
+    <p class="lead text-muted mb-4">Ops! A página que você está procurando não foi encontrada.</p>
+    <a href="../index.html" class="btn btn-primary"><i class="fa-solid fa-house me-2"></i>Voltar para a Home</a>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-dark text-light pt-5">
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-md-4">
+          <img width="120" src="../img/icons/icon.png" alt="Logo Explore Brasília" loading="lazy" />
+          <p class="mt-3">Conectando você às principais notícias de Samambaia.</p>
+          <div>
+            <a href="#" class="text-light me-2"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="text-light me-2"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="#" class="text-light"><i class="fa-brands fa-x-twitter"></i></a>
+          </div>
+        </div>
+
+        <nav class="col-md-2">
+          <h5>Informações</h5>
+          <ul class="list-unstyled">
+            <li><a href="sobre.html" class="text-light">Sobre Nós</a></li>
+            <li><a href="servicos.html" class="text-light">Serviços</a></li>
+            <li><a href="blog.html" class="text-light">Blog</a></li>
+          </ul>
+        </nav>
+
+        <nav class="col-md-2">
+          <h5>Ajuda</h5>
+          <ul class="list-unstyled">
+            <li><a href="404.html" class="text-light">FAQ</a></li>
+            <li><a href="404.html" class="text-light">Termos de Uso</a></li>
+            <li><a href="404.html" class="text-light">Política de Privacidade</a></li>
+          </ul>
+        </nav>
+
+        <div class="col-md-4">
+          <h5>Notícias</h5>
+          <p>Insira seu e-mail para ser notificado das novidades em Samambaia.</p>
+          <form id="subscribe-form" class="d-flex" onsubmit="event.preventDefault();">
+            <input type="email" class="form-control me-2" placeholder="seu@email.com" required />
+            <button class="btn btn-primary" type="submit"><i class="fa-regular fa-envelope"></i></button>
+          </form>
+        </div>
+      </div>
+
+      <div class="text-center mt-4 pb-3 small">&copy; 2025 Todos os Direitos Reservados — Explore Brasília</div>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    window.addEventListener("scroll", function () {
+      const navbar = document.querySelector(".navbar");
+      if (window.scrollY > 50) {
+        navbar.classList.add("navbar-scrolled");
+        navbar.classList.remove("navbar-transparent");
+      } else {
+        navbar.classList.add("navbar-transparent");
+        navbar.classList.remove("navbar-scrolled");
+      }
+    });
+  </script>
+</body>
+</html>

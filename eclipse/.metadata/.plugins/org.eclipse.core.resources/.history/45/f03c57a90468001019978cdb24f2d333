@@ -1,0 +1,34 @@
+package br.com.banco.app;
+
+import br.com.banco.model.Conta;
+import br.com.banco.model.Tributavel;
+import br.com.banco.contas.ContaCorrente;
+import br.com.banco.contas.ContaPoupanca;
+
+public class BancoApp {
+
+    public static void main(String[] args) {
+        // Criando um vetor de contas (polimorfismo)
+        Conta[] contas = new Conta[2];
+
+        contas[0] = new ContaCorrente(1, "João", 1000.0);
+        contas[1] = new ContaPoupanca(2, "Maria", 1200.0);
+
+        // Percorre cada conta e realiza operações
+        for (Conta c : contas) {
+            System.out.println("Conta de " + c.getTitular());
+
+            c.sacar(50);
+            c.depositar(0);  // só pra testar os métodos
+
+            c.exibirSaldo();
+
+            if (c instanceof Tributavel) {
+                Tributavel t = (Tributavel) c;
+                System.out.println("Tributo: R$ " + String.format("%.2f", t.calcularTributo()));
+            }
+
+            System.out.println(); // pula linha
+        }
+    }
+}

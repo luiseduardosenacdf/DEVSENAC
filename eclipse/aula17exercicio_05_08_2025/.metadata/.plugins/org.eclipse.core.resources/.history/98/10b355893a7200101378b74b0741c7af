@@ -1,0 +1,102 @@
+package AgenciaBancaria;
+
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String nomeCliente = "";
+        String tipoConta = "Corrente";
+        double saldo = 0.0;
+        int opcao;
+
+        // Obter informações do cliente
+        System.out.println("Bem-vindo ao sistema bancário!");
+        System.out.print("Digite seu nome: ");
+        nomeCliente = scanner.nextLine();
+
+        // Inicializar saldo
+        System.out.print("Digite o saldo inicial da conta: ");
+        try {
+            saldo = scanner.nextDouble();
+        } catch (InputMismatchException e) {
+            System.out.println("Erro: Saldo inválido. O saldo foi definido como 0.0.");
+            saldo = 0.0;
+            scanner.next(); // Limpar a entrada inválida
+        }
+        scanner.nextLine(); // Limpar o buffer
+
+        System.out.println("Nome do cliente: " + nomeCliente);
+        System.out.println("Tipo de conta: " + tipoConta);
+
+        do {
+            System.out.println("\nEscolha uma operação:");
+            System.out.println("1 - Ver saldo");
+            System.out.println("2 - Fazer depósito");
+            System.out.println("3 - Realizar saque");
+            System.out.println("4 - Sair do sistema");
+            System.out.print("Opção: ");
+
+            try {
+                opcao = scanner.nextInt();
+            } catch (InputMismatchException e) {
+                System.out.println("Erro: Opção inválida. Tente novamente.");
+                opcao = -1; // Define como -1 para repetir o loop
+                scanner.next(); // Limpar a entrada inválida
+            }
+            scanner.nextLine(); // Limpar o buffer
+
+            switch (opcao) {
+                case 1:
+                    // Lógica para ver saldo
+                    System.out.println("Saldo atual: " + saldo);
+                    break;
+                case 2:
+                    // Lógica para fazer depósito
+                    System.out.print("Digite o valor do depósito: ");
+                    try {
+                        double valorDeposito = scanner.nextDouble();
+                        if (valorDeposito > 0) {
+                            saldo += valorDeposito;
+                            System.out.println("Depósito realizado com sucesso. Novo saldo: " + saldo);
+                        } else {
+                            System.out.println("Erro: O valor do depósito deve ser maior que zero.");
+                        }
+                    } catch (InputMismatchException e) {
+                        System.out.println("Erro: Valor de depósito inválido.");
+                        scanner.next(); // Limpar a entrada inválida
+                    }
+                    scanner.nextLine(); // Limpar o buffer
+                    break;
+                case 3:
+                    // Lógica para realizar saque
+                    System.out.print("Digite o valor do saque: ");
+                    try {
+                        double valorSaque = scanner.nextDouble();
+                        if (valorSaque > 0 && valorSaque <= saldo) {
+                            saldo -= valorSaque;
+                            System.out.println("Saque realizado com sucesso. Novo saldo: " + saldo);
+                        } else if (valorSaque <= 0) {
+                            System.out.println("Erro: O valor do saque deve ser maior que zero.");
+                        } else {
+                            System.out.println("Saldo insuficiente.");
+                        }
+                    } catch (InputMismatchException e) {
+                        System.out.println("Erro: Valor de saque inválido.");
+                        scanner.next(); // Limpar a entrada inválida
+                    }
+                    scanner.nextLine(); // Limpar o buffer
+                    break;
+                case 4:
+                    System.out.println("Saindo do sistema. Obrigado!");
+                    break;
+                default:
+                    System.out.println("Opção inválida.");
+            }
+        } while (opcao != 4);
+
+        scanner.close();
+    }
+}

@@ -1,0 +1,17 @@
+package aula04exercicio_17_07_2025;
+
+public class main {
+
+	public static void main(String[] args) {
+		Veiculo veiculo1 = new Veiculo();
+		veiculo1.mover();
+		
+		Carro carro1 = new Carro();
+		carro1.mover();
+
+		Bicicleta bicicleta1 = new Bicicleta();
+		bicicleta1.mover();
+		
+	}
+
+}

@@ -1,0 +1,13 @@
+package aula02_15_07_2025;
+
+public class Carro {
+	//Atributos
+	String marca;
+	String modelo;
+	String cor;
+	String potencia;
+	String placa;
+	String chassi;
+	double preco;
+	int portas;
+}

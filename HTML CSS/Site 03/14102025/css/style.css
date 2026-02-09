@@ -1,0 +1,389 @@
+/* style.css
+   Biblioteca da Faculdade Católica de Brasília
+   - Responsivo | Acessível | Performance-friendly
+*/
+
+/* ========== Variáveis ================= */
+:root{
+  --bg: #ffffff;
+  --surface: #f8f9fb;
+  --primary: #0b61b6;        /* azul principal */
+  --accent: #c59a2a;         /* dourado/accent */
+  --text: #111827;
+  --muted: #6b7280;
+  --header-height: 64px;     /* ajustar se necessário */
+  --max-width: 1200px;
+  --radius: 8px;
+  --shadow-soft: 0 6px 18px rgba(10,10,10,0.06);
+  --shadow-sm: 0 2px 6px rgba(0,0,0,0.06);
+  --focus-ring: 3px solid rgba(11,97,182,0.18);
+  --container-padding: 1rem;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color-scheme: light;
+}
+
+/* Reset / base */
+* { box-sizing: border-box; }
+html,body{ height:100%; }
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:var(--font-family, Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial);
+  line-height:1.45;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Container */
+.container{
+  width:100%;
+  max-width:var(--max-width);
+  margin:0 auto;
+  padding:0 var(--container-padding);
+}
+
+/* Skip link - visível ao focar */
+.skip-link{
+  position: absolute;
+  left: -999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  z-index: 9999;
+}
+.skip-link:focus{
+  left: 1rem;
+  top: 1rem;
+  width: auto;
+  height: auto;
+  background: #fff;
+  padding: .5rem .75rem;
+  border-radius: 4px;
+  box-shadow: var(--shadow-sm);
+  color: var(--primary);
+  text-decoration: none;
+}
+
+/* ========== HEADER / NAV ========== */
+.site-header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--header-height);
+  background: linear-gradient(180deg, rgba(255,255,255,0.92), rgba(255,255,255,0.85));
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(15,23,42,0.04);
+  z-index: 1200;
+}
+.header-container {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr; /* logo | menu | botão */
+  align-items: center;
+  height: 100%;
+  gap: 5rem;
+}
+.logo{
+  height:40px;
+  width:auto;
+  display:block;
+}
+
+/* Nav */
+nav#mainNav{ flex:1; margin-left:1rem; }
+.menu{
+  display:flex;
+  gap:1rem;
+  list-style:none;
+  margin:0;
+  padding:0;
+  align-items:center;
+}
+.menu a{
+  display:inline-block;
+  padding:.5rem .75rem;
+  color:var(--text);
+  text-decoration:none;
+  border-radius:6px;
+  font-weight:500;
+}
+.menu a:hover,
+.menu a:focus{
+  background: rgba(11,97,182,0.06);
+  color: var(--primary);
+  outline: none;
+}
+
+/* Mobile menu toggle */
+#menuToggle{
+  display:none;
+  background: transparent;
+  border: 1px solid rgba(0,0,0,0.06);
+  padding:.45rem .6rem;
+  border-radius:6px;
+  font-size:1.15rem;
+  cursor:pointer;
+}
+#menuToggle:focus{ box-shadow: var(--focus-ring); outline: none; }
+
+/* Hero offset so main content isn't hidden under fixed header */
+main{ padding-top: calc(var(--header-height) + 1rem); }
+
+/* ========== HERO ========== */
+.hero{
+  position:relative;
+  min-height: 80vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color: #fff;
+  overflow:hidden;
+}
+.hero .hero-bg{
+  position:absolute;
+  inset:0;
+  background-image: url("../img/entrada.jpg"); /* caminho relativo ao css, ajuste se necessário */
+  background-position:center;
+  background-size:cover;
+  background-repeat:no-repeat;
+  filter: saturate(.95) contrast(.95);
+  transform: scale(1.02);
+  z-index:0;
+}
+
+/* overlay for text */
+.hero .overlay{
+  position:relative;
+  z-index:2;
+  text-align:center;
+  padding: 3rem 1rem;
+  width:100%;
+}
+.hero h1{
+  margin:0 0 .5rem 0;
+  font-size:clamp(1.6rem, 4vw, 2.4rem);
+  line-height:1.05;
+  text-shadow: 0 6px 18px rgba(0,0,0,0.35);
+}
+.hero p{
+  margin:0 0 1rem 0;
+  color: rgba(255,255,255,0.95);
+  font-size:clamp(.95rem, 2vw, 1.05rem);
+}
+
+/* Button primary */
+.btn{
+  display:inline-block;
+  background: var(--accent);
+  color: #fff;
+  padding:.6rem 1rem;
+  border-radius: 8px;
+  text-decoration:none;
+  font-weight:600;
+  border: none;
+  cursor:pointer;
+  box-shadow: var(--shadow-sm);
+}
+.btn:hover, .btn:focus{
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-soft);
+  outline: none;
+}
+.btn:focus{ box-shadow: var(--focus-ring); }
+
+/* ========== SECTIONS ========== */
+section{
+  padding: 3.25rem 0;
+}
+.titulo-secao{
+  margin:0 0 1rem 0;
+  font-size:1.4rem;
+  color:var(--primary);
+}
+
+/* SOBRE */
+.sobre{
+  display:flex;
+  gap:1.25rem;
+  align-items:center;
+  flex-wrap:wrap;
+}
+.sobre .texto{
+  flex:1 1 420px;
+}
+.imagem-sobre{
+  flex:0 0 420px;
+  max-width:80%;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+}
+
+/* SERVIÇOS - cards */
+.cards{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+  gap:1rem;
+  margin-top:1rem;
+}
+.card{
+  background: linear-gradient(180deg, #fff, var(--surface));
+  padding:1rem;
+  border-radius:8px;
+  box-shadow: var(--shadow-sm);
+  min-height:110px;
+}
+.card h3{ margin:0 0 .4rem 0; font-size:1rem; }
+
+/* ACERVO - busca e resultados */
+.busca-acervo{
+  display:flex;
+  gap:.5rem;
+  align-items:center;
+  margin-top:.5rem;
+}
+.busca-acervo input[type="search"]{
+  flex:1;
+  padding:.6rem .75rem;
+  border:1px solid rgba(15,23,42,0.08);
+  border-radius:8px;
+  font-size:1rem;
+}
+.busca-acervo input:focus{
+  outline: none;
+  box-shadow: var(--focus-ring);
+  border-color: var(--primary);
+}
+#btnPesquisar{
+  min-width:110px;
+}
+
+/* resultados */
+#resultados{
+  margin-top:1rem;
+}
+.resultado-item{
+  padding:.8rem;
+  border-radius:8px;
+  background: #fff;
+  border:1px solid rgba(15,23,42,0.03);
+  box-shadow: var(--shadow-sm);
+  margin-bottom:.6rem;
+}
+.resultado-item .meta{
+  color:var(--muted);
+  font-size:.9rem;
+  margin-top:.4rem;
+}
+
+/* RENOVAÇÃO */
+.renovacao form{
+  max-width:720px;
+  display:grid;
+  gap:.75rem;
+}
+.form-row{
+  display:flex;
+  flex-direction:column;
+}
+.form-row label{
+  font-size:.9rem;
+  color:var(--muted);
+  margin-bottom:.25rem;
+}
+.renovacao input[type="text"],
+.renovacao input[type="date"]{
+  padding:.6rem .7rem;
+  border-radius:8px;
+  border:1px solid rgba(15,23,42,0.06);
+  font-size:1rem;
+}
+.mensagem-sucesso{
+  color: #165a2e;
+  margin-top:.5rem;
+}
+.mensagem-error{
+  color: #8b1d1d;
+  margin-top:.5rem;
+}
+
+/* CONTATO */
+.contato-grid{
+  display:grid;
+  grid-template-columns: 1fr 420px;
+  gap:1rem;
+}
+.contato-mapa{ min-height:240px; border-radius:8px; overflow:hidden; box-shadow: var(--shadow-sm); }
+
+ /* FOOTER */
+footer{
+  border-top:1px solid rgba(15,23,42,0.04);
+  padding:1.25rem 0;
+  text-align:center;
+  background:transparent;
+  color:var(--muted);
+}
+
+/* ========== Accessibility focus states ========== */
+a:focus, button:focus, input:focus {
+  outline: none;
+  box-shadow: var(--focus-ring);
+  border-radius:6px;
+}
+
+/* ========== Responsive ========== */
+@media (max-width: 900px){
+  .container{ padding:0 0.9rem; }
+  .sobre{ flex-direction:column-reverse; }
+  .contato-grid{ grid-template-columns:1fr; }
+
+  /* Mobile nav: hide list by default, toggle via .open */
+  .menu{
+    position: absolute;
+    right: .9rem;
+    top: calc(var(--header-height) + 8px);
+    flex-direction: column;
+    gap: .25rem;
+    background: #fff;
+    border-radius: 8px;
+    padding: .6rem;
+    box-shadow: var(--shadow-soft);
+    display: none;
+    min-width: 200px;
+  }
+  .menu.open, .menu[aria-hidden="false"]{ display:flex; }
+  #menuToggle{ display:inline-flex; }
+
+  nav#mainNav{ margin-left: .5rem; }
+}
+
+/* smaller phones */
+@media (max-width: 420px){
+  .hero .overlay{ padding: 2rem .6rem; }
+  .logo{ height:34px; }
+  #btnPesquisar{ min-width:90px; padding:.5rem .6rem; font-size:.95rem; }
+}
+
+/* ========== Utility ========== */
+.sr-only{
+  position:absolute !important;
+  width:1px;
+  height:1px;
+  overflow:hidden;
+  clip:rect(1px,1px,1px,1px);
+  white-space:nowrap;
+}
+
+/* Remove white-ish box-shadow bug (corrige box-shadow branco mencionado) */
+.card, .imagem-sobre{
+  /* substitui sombras brancas por sombras sutis escuras */
+  box-shadow: var(--shadow-sm);
+}
+
+/* Minor print styles */
+@media print{
+  .site-header, .btn, #menuToggle, .menu{ display:none !important; }
+  body{ background: #fff; color: #000; }
+}

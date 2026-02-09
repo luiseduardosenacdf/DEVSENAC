@@ -1,0 +1,122 @@
+package AgenciaBancaria;
+
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+public class Projeto02 {
+
+    	    public static void main(String[] args) {
+    	        Scanner scanner = new Scanner(System.in);
+
+    	        // Declaração das variáveis do cliente
+    	        String nomeCliente = "";
+    	        String tipoConta = "Corrente"; 
+    	        double saldo = 0.0; 
+    	        int opcao; 
+
+    	        // Exibe mensagem de boas-vindas
+    	        System.out.println("Bem-vindo ao sistema bancário!");
+    	        System.out.print("Digite seu nome: ");
+    	        nomeCliente = scanner.nextLine(); // Lê o nome do cliente
+
+    	        // Solicita e lê o saldo inicial da conta
+    	        System.out.print("Digite o saldo inicial da conta: ");
+    	        try {
+    	            saldo = scanner.nextDouble(); // Tenta ler um número decimal
+    	        } catch (InputMismatchException e) {
+    	            // Trata erro caso o usuário digite algo inválido (ex: letras)
+    	            System.out.println("Erro: Saldo inválido. O saldo foi definido como 0.0.");
+    	            saldo = 0.0;
+    	            scanner.next(); // Limpa o valor inválido do buffer
+    	        }
+    	        scanner.nextLine(); // Limpa o buffer do scanner (para evitar problemas nas próximas leituras)
+
+    	        // Exibe os dados do cliente
+    	        System.out.println("Nome do cliente: " + nomeCliente);
+    	        System.out.println("Tipo de conta: " + tipoConta);
+
+    	        // Início do menu de operações
+    	        do {
+    	            // Exibe as opções disponíveis
+    	            System.out.println("\nEscolha uma operação:");
+    	            System.out.println("1 - Ver saldo");
+    	            System.out.println("2 - Fazer depósito");
+    	            System.out.println("3 - Realizar saque");
+    	            System.out.println("4 - Sair do sistema");
+    	            System.out.print("Opção: ");
+
+    	            try {
+    	                opcao = scanner.nextInt(); // Tenta ler a opção escolhida
+    	            } catch (InputMismatchException e) {
+    	                // Trata erro caso o usuário digite algo inválido
+    	                System.out.println("Erro: Opção inválida. Tente novamente.");
+    	                opcao = -1; // Define como -1 para que o loop continue
+    	                scanner.next(); // Limpa a entrada inválida
+    	            }
+    	            scanner.nextLine(); // Limpa o buffer novamente
+
+    	            // Executa a operação com base na opção escolhida
+    	            switch (opcao) {
+    	                case 1:
+    	                    // Ver saldo atual
+    	                    System.out.println("Saldo atual: " + saldo);
+    	                    break;
+
+    	                case 2:
+    	                    // Fazer depósito
+    	                    System.out.print("Digite o valor do depósito: ");
+    	                    try {
+    	                        double valorDeposito = scanner.nextDouble(); // Lê o valor do depósito
+    	                        if (valorDeposito > 0) {
+    	                            saldo += valorDeposito; // Adiciona o valor ao saldo
+    	                            System.out.println("Depósito realizado com sucesso. Novo saldo: " + saldo);
+    	                        } else {
+    	                            System.out.println("Erro: O valor do depósito deve ser maior que zero.");
+    	                        }
+    	                    } catch (InputMismatchException e) {
+    	                        // Trata erro caso o valor digitado seja inválido
+    	                        System.out.println("Erro: Valor de depósito inválido.");
+    	                        scanner.next(); // Limpa o valor inválido
+    	                    }
+    	                    scanner.nextLine(); // Limpa o buffer
+    	                    break;
+
+    	                case 3:
+    	                    // Realizar saque
+    	                    System.out.print("Digite o valor do saque: ");
+    	                    try {
+    	                        double valorSaque = scanner.nextDouble(); // Lê o valor do saque
+    	                        if (valorSaque > 0 && valorSaque <= saldo) {
+    	                            saldo -= valorSaque; // Subtrai o valor do saldo
+    	                            System.out.println("Saque realizado com sucesso. Novo saldo: " + saldo);
+    	                        } else if (valorSaque <= 0) {
+    	                            System.out.println("Erro: O valor do saque deve ser maior que zero.");
+    	                        } else {
+    	                            System.out.println("Saldo insuficiente."); // O saldo não é suficiente
+    	                        }
+    	                    } catch (InputMismatchException e) {
+    	                        // Trata erro caso o valor digitado seja inválido
+    	                        System.out.println("Erro: Valor de saque inválido.");
+    	                        scanner.next(); // Limpa a entrada inválida
+    	                    }
+    	                    scanner.nextLine(); // Limpa o buffer
+    	                    break;
+
+    	                case 4:
+    	                    // Finaliza o programa
+    	                    System.out.println("Saindo do sistema. Obrigado!");
+    	                    break;
+
+    	                default:
+    	                    // Caso a opção digitada não seja reconhecida
+    	                    System.out.println("Opção inválida.");
+    	            }
+
+    	        } while (opcao != 4); // Repete enquanto a opção for diferente de 4 (sair)
+
+    	        scanner.close(); // Fecha o Scanner e libera o recurso
+    	    }
+    	}
+
+
+

@@ -1,0 +1,13 @@
+package aula03_16_07_2025;
+
+public class main {
+
+	public static void main(String[] args) {
+		Pessoa pessoa1 = new Pessoa("Luis Eduardo", 32, 1.78,'M',"048.754.891-45");
+		
+				
+		pessoa1.apresentar();
+		
+	}
+
+}

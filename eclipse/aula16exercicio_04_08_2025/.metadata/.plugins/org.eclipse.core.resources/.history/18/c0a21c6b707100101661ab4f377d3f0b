@@ -1,0 +1,48 @@
+package aula16exercicio_04_08_2025;
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        String[] produtos = {
+            "X-Burguer",
+            "X-Salada",
+            "X-Bacon",
+            "Batata Frita",
+            "Refrigerante Lata",
+            "Suco Natural",
+            "Água Mineral"
+        };
+
+        double[] precos = {
+            10.00,
+            12.00,
+            14.00,
+            8.00,
+            5.00,
+            6.00,
+            3.00
+        };
+
+        System.out.println("--- Menu da Lanchonete ---\n");
+        for (int i = 0; i < produtos.length; i++) {
+            System.out.printf("%d. %s.................. R$ %.2f%n", i + 1, produtos[i], precos[i]);
+        }
+
+        System.out.print("\nEscolha uma opção pelo número (1 a 7): ");
+        int opcao = scanner.nextInt();
+
+        if (opcao >= 1 && opcao <= 7) {
+            int index = opcao - 1;
+            System.out.println("\nVocê selecionou: " + produtos[index]);
+            System.out.printf("Preço: R$ %.2f%n", precos[index]);
+        } else {
+            System.out.println("\nOpção inválida.");
+        }
+
+        scanner.close();
+    }
+}

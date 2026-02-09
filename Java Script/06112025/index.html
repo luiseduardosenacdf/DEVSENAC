@@ -1,0 +1,91 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cafeteria JS ☕ | Desafio DOM Interativo</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <nav class="container-fluid">
+    <ul><li><strong>Cafeteria JS</strong></li></ul>
+    <ul>
+      <li><a href="#">Início</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#contato" role="button">Contato</a></li>
+    </ul>
+  </nav>
+
+  <main class="container">
+    <h1 class="titulo">☕ Bem-vindo à Cafeteria JS</h1>
+    <p class="subtitulo">Explore nosso menu interativo feito com JavaScript</p>
+
+    <section id="menu" class="grid">
+      <article id="produto1" class="produto">
+        <hgroup>
+          <h2>Café Expresso</h2>
+          <h3>Intenso e aromático</h3>
+        </hgroup>
+        <figure>
+          <img src="https://img.freepik.com/fotos-premium/xicara-de-cafe-expresso-e-graos-torrados-fundo-de-cafe_136875-1207.jpg" alt="Café Expresso">
+          <figcaption><a href="#" target="_blank">Ver imagem</a></figcaption>
+        </figure>
+        <p>Preço: R$ <span class="preco">8.50</span></p>
+        <span class="status">Status: Em Estoque</span>
+      </article>
+
+      <article id="produto2" class="produto">
+        <hgroup>
+          <h2>Cappuccino</h2>
+          <h3>Com leve toque de canela</h3>
+        </hgroup>
+        <figure>
+          <img src="https://www.lecreuset.com.br/dw/image/v2/BDRT_PRD/on/demandware.static/-/Sites-le-creuset-br-master/default/dw85a7cb0f/images/Cappuccino-caseiro-receita-le_creuset.png?sw=650&sh=650&sm=fit" alt="Cappuccino">
+          <figcaption><a href="#" target="_blank">Ver imagem</a></figcaption>
+        </figure>
+        <p>Preço: R$ <span class="preco">12.00</span></p>
+        <span class="status">Status: Em Estoque</span>
+      </article>
+
+      <article id="produto3" class="produto">
+        <hgroup>
+          <h2>Latte</h2>
+          <h3>Suave e cremoso</h3>
+        </hgroup>
+        <figure>
+          <img src="https://uniquecafes.com.br/wp-content/uploads/2021/08/Destaque-cafe-Latte.jpg" alt="Latte">
+          <figcaption><a href="#" target="_blank">Ver imagem</a></figcaption>
+        </figure>
+        <p>Preço: R$ <span class="preco">9.00</span></p>
+        <span class="status">Status: Esgotado</span>
+      </article>
+    </section>
+
+    <hr />
+
+    <section aria-label="newsletter">
+      <article>
+        <hgroup>
+          <h2>📬 Assine nossa newsletter</h2>
+          <h3>Receba promoções e novidades semanais!</h3>
+        </hgroup>
+        <form class="grid" id="form-news">
+          <input type="text" id="firstname" placeholder="Seu nome" required>
+          <input type="email" id="email" placeholder="Seu e-mail" required>
+          <button type="submit">Inscrever-se</button>
+        </form>
+        <p id="msg" class="msg"></p>
+      </article>
+    </section>
+  </main>
+
+  <footer class="container">
+    <small>© 2025 Cafeteria JS • Feito com ☕ e <a href="#">Cods</a></small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

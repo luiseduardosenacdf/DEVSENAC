@@ -1,0 +1,5 @@
+package br.com.sistemacomercial.view;
+
+public class ProdutoView {
+
+}

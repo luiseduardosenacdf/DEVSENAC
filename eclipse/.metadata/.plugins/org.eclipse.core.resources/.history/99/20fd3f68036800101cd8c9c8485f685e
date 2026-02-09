@@ -1,0 +1,28 @@
+package br.com.banco.app;
+
+import br.com.banco.contas.ContaCorrente;
+import br.com.banco.contas.ContaPoupanca;
+
+public class BancoApp {
+
+    public static void main(String[] args) {
+
+        // Criando uma conta corrente para João
+        ContaCorrente contaJoao = new ContaCorrente(1, "João", 1000.0);
+        contaJoao.sacar(50.0);
+        contaJoao.depositar(0.0);
+        
+        System.out.println("Conta Corrente - " + contaJoao.getTitular());
+        contaJoao.exibirSaldo();
+        System.out.println("Tributo: R$ " + String.format("%.2f", contaJoao.calcularTributo()));
+        System.out.println();
+
+        // Criando uma conta poupança para Maria
+        ContaPoupanca contaMaria = new ContaPoupanca(2, "Maria", 1200.0);
+        contaMaria.sacar(50.0);
+        contaMaria.depositar(0.0);
+        
+        System.out.println("Conta Poupança - " + contaMaria.getTitular());
+        contaMaria.exibirSaldo();
+    }
+}

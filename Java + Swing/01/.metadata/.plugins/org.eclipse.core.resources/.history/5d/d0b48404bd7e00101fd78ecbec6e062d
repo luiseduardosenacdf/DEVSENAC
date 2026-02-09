@@ -1,0 +1,165 @@
+package br.com.sistemacomercial.view;
+
+import br.com.sistemacomercial.dao.ProdutoDAO;
+import br.com.sistemacomercial.model.Produto;
+
+import javax.swing.*;
+import javax.swing.event.ListSelectionListener;
+import javax.swing.table.DefaultTableModel;
+import java.awt.*;
+import java.util.List;
+
+public class TelaCadastroProduto extends JFrame {
+
+    private JTextField campoNome;
+    private JTextField campoPreco;
+    private JButton botaoSalvar, botaoEditar, botaoExcluir, botaoNovo;
+    private JTable tabela;
+    private DefaultTableModel modeloTabela;
+
+    private final ProdutoDAO produtoDAO = new ProdutoDAO();
+
+    public TelaCadastroProduto() {
+        configurarJanela();
+        inicializarComponentes();
+        atualizarTabela();
+    }
+
+    private void configurarJanela() {
+        setTitle("Cadastro de Produtos");
+        setSize(700, 420);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
+    }
+
+    private void inicializarComponentes() {
+        JPanel painelTopo = new JPanel(new FlowLayout(FlowLayout.LEFT));
+        JLabel lblNome = new JLabel("Nome:");
+        campoNome = new JTextField(20);
+        JLabel lblPreco = new JLabel("Preço:");
+        campoPreco = new JTextField(8);
+
+        botaoSalvar = new JButton("Salvar");
+        botaoEditar = new JButton("Editar");
+        botaoExcluir = new JButton("Excluir");
+        botaoNovo = new JButton("Novo");
+
+        painelTopo.add(lblNome);
+        painelTopo.add(campoNome);
+        painelTopo.add(lblPreco);
+        painelTopo.add(campoPreco);
+        painelTopo.add(botaoSalvar);
+        painelTopo.add(botaoEditar);
+        painelTopo.add(botaoExcluir);
+        painelTopo.add(botaoNovo);
+
+        modeloTabela = new DefaultTableModel(new Object[]{"ID", "Nome", "Preço"}, 0) {
+            @Override
+            public boolean isCellEditable(int row, int column) {
+                return false;
+            }
+        };
+        tabela = new JTable(modeloTabela);
+        tabela.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        JScrollPane scroll = new JScrollPane(tabela);
+
+        add(painelTopo, BorderLayout.NORTH);
+        add(scroll, BorderLayout.CENTER);
+
+        adicionarEventos();
+    }
+
+    private void adicionarEventos() {
+        botaoSalvar.addActionListener(e -> salvarProduto());
+        botaoEditar.addActionListener(e -> editarProduto());
+        botaoExcluir.addActionListener(e -> excluirProduto());
+        botaoNovo.addActionListener(e -> limparCampos());
+
+        ListSelectionListener selListener = e -> {
+            if (!e.getValueIsAdjusting() && tabela.getSelectedRow() >= 0) {
+                int linha = tabela.getSelectedRow();
+                campoNome.setText(modeloTabela.getValueAt(linha, 1).toString());
+                campoPreco.setText(modeloTabela.getValueAt(linha, 2).toString());
+            }
+        };
+        tabela.getSelectionModel().addListSelectionListener(selListener);
+    }
+
+    private void salvarProduto() {
+        String nome = campoNome.getText().trim();
+        String precoStr = campoPreco.getText().trim();
+
+        if (nome.isEmpty() || precoStr.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Preencha todos os campos!");
+            return;
+        }
+
+        double preco;
+        try {
+            preco = Double.parseDouble(precoStr.replace(",", "."));
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(this, "Preço inválido!");
+            return;
+        }
+
+        int linhaSelecionada = tabela.getSelectedRow();
+        if (linhaSelecionada >= 0) {
+            int id = Integer.parseInt(modeloTabela.getValueAt(linhaSelecionada, 0).toString());
+            Produto p = new Produto(id, nome, preco);
+            if (produtoDAO.atualizarProduto(p)) {
+                atualizarTabela();
+                limparCampos();
+            } else {
+                JOptionPane.showMessageDialog(this, "Erro ao atualizar produto.");
+            }
+        } else {
+            Produto p = new Produto(nome, preco);
+            produtoDAO.adicionarProduto(p);
+            atualizarTabela();
+            limparCampos();
+        }
+    }
+
+    private void editarProduto() {
+        int linha = tabela.getSelectedRow();
+        if (linha >= 0) {
+            campoNome.requestFocus();
+        } else {
+            JOptionPane.showMessageDialog(this, "Selecione um produto para editar!");
+        }
+    }
+
+    private void excluirProduto() {
+        int linha = tabela.getSelectedRow();
+        if (linha >= 0) {
+            int id = Integer.parseInt(modeloTabela.getValueAt(linha, 0).toString());
+            int confirma = JOptionPane.showConfirmDialog(this, "Confirma exclusão do produto ID " + id + "?", "Confirmar", JOptionPane.YES_NO_OPTION);
+            if (confirma == JOptionPane.YES_OPTION) {
+                produtoDAO.removerProduto(id);
+                atualizarTabela();
+                limparCampos();
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "Selecione um produto para excluir!");
+        }
+    }
+
+    private void atualizarTabela() {
+        List<Produto> lista = produtoDAO.listarProdutos();
+        modeloTabela.setRowCount(0);
+        for (Produto p : lista) {
+            modeloTabela.addRow(new Object[]{p.getId(), p.getNome(), p.getPreco()});
+        }
+    }
+
+    private void limparCampos() {
+        campoNome.setText("");
+        campoPreco.setText("");
+        tabela.clearSelection();
+        campoNome.requestFocus();
+    }
+
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(() -> new TelaCadastroProduto().setVisible(true));
+    }
+}

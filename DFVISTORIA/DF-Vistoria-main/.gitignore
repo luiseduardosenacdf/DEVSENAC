@@ -1,0 +1,26 @@
+# Eclipse
+.classpath
+.project
+.settings/
+.metadata/
+
+# Logs
+*.log
+
+# Java
+*.class
+
+# Pastas de build
+/bin/
+/target/
+
+# Outros arquivos de IDEs
+.idea/
+/.vscode/
+
+# Arquivo sensível (credenciais)
+ConexaoSQL.java
+
+# Bibliotecas externas (JARs)
+*.jargit rm --cached -r *.jar
+

@@ -1,0 +1,5 @@
+package br.com.sistemacomercial.dao;
+
+public class ProdutoDAO {
+
+}

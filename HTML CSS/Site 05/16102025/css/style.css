@@ -1,0 +1,340 @@
+/* ============================================================
+   Explore Brasília — style.css (Grimoire Edition)
+   Base moderna, responsiva e coerente com todo o portal
+   ============================================================ */
+
+/* ---------- RESET ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", "Segoe UI", Roboto, sans-serif;
+  background-color: #ffffff;
+  color: #222;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ---------- CORES ---------- */
+:root {
+  --color-primary: #004aad;
+  --color-accent: #c99a29;
+  --color-green: #32a128;
+  --color-gold: #cfa52a;
+  --color-dark: #0e0c0c;
+  --color-light: #f8f9fa;
+  --color-muted: #6c757d;
+  --color-neutral-0: #ffffff;
+  --color-neutral-10: #222222;
+  --color-neutral-30: #999999;
+  --color-neutral-40: #ffffff;
+  --transition: 0.3s ease;
+}
+
+/* ---------- NAVBAR ---------- */
+.navbar {
+  background-color: #ffffff;
+  height: 80px;
+  transition: background-color var(--transition);
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-scrolled {
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.container-fluid .navbar-brand {
+  font-weight: 700;
+  color: var(--color-green);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.container-fluid .navbar-brand:hover {
+  color: var(--color-accent);
+  transition: color var(--transition);
+}
+
+.nav-link {
+  color: #666777;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav-link.active {
+  color: var(--color-primary);
+  text-decoration: underline 3px solid var(--color-primary);
+}
+
+.nav-link:hover {
+  color: #000;
+  text-decoration: underline 3px solid var(--color-primary);
+}
+
+.login-button {
+  background-color: #bbc952;
+  color: #fff;
+  font-size: 14px;
+  padding: 8px 20px;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: 0.35s ease-in-out;
+}
+
+.login-button:hover {
+  background-color: #a8b545;
+  filter: drop-shadow(2px 2px rgba(0, 0, 0, 0.87));
+  transition: 0.1s ease-in-out;
+}
+
+.logoff-button {
+  text-decoration: none;
+  text-align: center;
+  color: #fff;
+  margin: 1%;
+  padding: 5px 15px;
+  background-color: var(--color-green);
+  border-radius: 10px;
+}
+
+.navbar-toggler {
+  border: none;
+  font-size: 1.23rem;
+}
+
+.navbar-toggler:focus,
+.btn-close:focus {
+  box-shadow: none;
+  outline: none;
+}
+
+/* ---------- BOTÕES PERSONALIZADOS ---------- */
+.btn-blue {
+  background-color: var(--color-primary);
+  color: #fff;
+  border: none;
+  transition: var(--transition);
+}
+
+.btn-blue:hover {
+  background-color: #003b8e;
+}
+
+.btn-gold {
+  background-color: var(--color-accent);
+  color: #fff;
+}
+
+.btn-gold:hover {
+  background-color: #b8860b;
+  color: #fff;
+}
+
+.btn-green {
+  background-color: var(--color-green);
+  color: #fff;
+}
+
+.btn-green:hover {
+  background-color: #2a8421;
+}
+
+.btn-purple {
+  background-color: #7f37c9;
+  color: #fff;
+}
+
+.btn-purple:hover {
+  background-color: #6b2ea8;
+}
+
+/* ---------- HERO ---------- */
+.hero-section {
+  position: relative;
+  text-align: center;
+  color: #fff;
+  padding: 8rem 1rem;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-section h1 {
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+/* ---------- CARDS ---------- */
+.card {
+  border: none;
+  border-radius: 10px;
+  transition: 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+}
+
+.card-title {
+  font-weight: 600;
+  color: var(--color-dark);
+}
+
+.card-text {
+  color: var(--color-muted);
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+  width: 100%;
+  margin-top: 10%;
+  color: var(--color-neutral-40);
+  box-shadow: 1px 1px 20px black;
+}
+
+#footer_content {
+  background-color: var(--color-neutral-10);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 3rem 3.5rem;
+  gap: 2rem;
+}
+
+.img-logo-footer {
+  text-align: center;
+}
+
+.img-logo-footer img {
+  filter: drop-shadow(1px 1px 4px rgb(0, 34, 66));
+}
+
+#footer_social_media {
+  display: flex;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+#footer_social_media .footer-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.5rem;
+  width: 2.5rem;
+  color: var(--color-neutral-40);
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+#footer_social_media .footer-link:hover {
+  opacity: 0.8;
+}
+
+#instagram {
+  background: linear-gradient(#7f37c9, #ff2992, #ff9007);
+}
+
+#whatsapp {
+  background-color: #25d366;
+}
+
+#x-twitter {
+  background-color: #0e0c0c;
+}
+
+.footer-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  list-style: none;
+}
+
+.footer-list .footer-link {
+  color: var(--color-neutral-30);
+  text-decoration: none;
+}
+
+.footer-list .footer-link:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+#footer_subscribe {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+#footer_subscribe p {
+  color: var(--color-neutral-30);
+}
+
+#input_group {
+  display: flex;
+  align-items: center;
+  background-color: var(--color-neutral-0);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+#input_group input {
+  all: unset;
+  padding: 0.75rem;
+  width: 100%;
+  color: #000;
+}
+
+#input_group button {
+  background-color: var(--color-accent);
+  border: none;
+  color: var(--color-neutral-40);
+  padding: 0 1.25rem;
+  font-size: 1.125rem;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+#input_group button:hover {
+  opacity: 0.85;
+}
+
+#footer_copyright {
+  display: flex;
+  justify-content: center;
+  background-color: var(--color-neutral-0);
+  color: #000;
+  font-size: 0.9rem;
+  padding: 1rem;
+  font-weight: 400;
+  text-align: center;
+}
+
+/* ---------- RESPONSIVIDADE ---------- */
+@media screen and (max-width: 991px) {
+  .nav-link {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #footer_content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 426px) {
+  #footer_content {
+    grid-template-columns: 1fr;
+    padding: 3rem 2rem;
+  }
+}

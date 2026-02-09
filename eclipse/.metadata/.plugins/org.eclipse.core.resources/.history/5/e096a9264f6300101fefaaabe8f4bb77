@@ -1,0 +1,10 @@
+package aula04exercicio_17_07_2025;
+
+public class TesteVeiculos {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

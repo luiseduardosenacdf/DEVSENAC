@@ -1,0 +1,26 @@
+package aula01_14_07_2025;
+
+import java.util.Scanner;
+
+public class main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("Digite a primeira nota:");
+        double nota1 = input.nextDouble();
+
+        System.out.println("Digite a segunda nota:");
+        double nota2 = input.nextDouble();
+
+        double media = (nota1 + nota2) / 2;
+        System.out.printf("Média: %.2f\n", media);
+
+        if (media >= 5.0) {
+            System.out.println("Situação: Aprovado ✅");
+        } else {
+            System.out.println("Situação: Reprovado ❌");
+        }
+
+        input.close();
+    }
+}

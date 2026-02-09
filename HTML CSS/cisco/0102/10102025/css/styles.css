@@ -1,0 +1,176 @@
+/* Formulário Encantado - Estilo por Grimoire 🧙‍♂️ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* 🔮 Fundo animado */
+.background {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 30% 20%, #5a00ff, transparent 40%),
+              radial-gradient(circle at 80% 80%, #00e5ff, transparent 40%),
+              linear-gradient(120deg, #0f001e, #10002b, #0a0018);
+  background-size: 200% 200%;
+  animation: gradientShift 15s ease infinite;
+  z-index: -1;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* 🪞 Cartão central */
+.form-card {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  max-width: 600px;
+  margin: 4rem auto;
+  padding: 2.5rem;
+  backdrop-filter: blur(15px);
+  box-shadow: 0 0 30px rgba(90, 0, 255, 0.3);
+  animation: fadeIn 1.2s ease forwards;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 1.8rem;
+}
+
+header h1 {
+  font-size: 2rem;
+  background: linear-gradient(90deg, #b388ff, #00e5ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.5rem;
+}
+
+header p {
+  color: #d3d3ff;
+  font-size: 0.95rem;
+}
+
+fieldset {
+  border: none;
+  margin-bottom: 1.5rem;
+}
+
+legend {
+  font-weight: 600;
+  color: #b388ff;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+
+label {
+  display: block;
+  margin: 0.8rem 0 0.3rem;
+  font-weight: 500;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  border: none;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 0 10px #b388ff;
+}
+
+input[type="radio"], input[type="checkbox"] {
+  width: auto;
+  margin-right: 0.4rem;
+  accent-color: #b388ff;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+  gap: 1rem;
+}
+
+button {
+  flex: 1;
+  padding: 0.9rem 1.2rem;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+button.enviar {
+  background: linear-gradient(90deg, #5a00ff, #00e5ff);
+  color: #fff;
+  box-shadow: 0 0 12px rgba(90, 0, 255, 0.4);
+}
+button.enviar:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 20px rgba(90, 0, 255, 0.7);
+}
+
+button.limpar {
+  background: rgba(255, 255, 255, 0.15);
+  color: #eee;
+}
+button.limpar:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-3px);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+footer {
+  text-align: center;
+  padding: 1.5rem 0;
+  font-size: 0.9rem;
+  color: #bfbfff;
+  text-shadow: 0 0 8px rgba(179, 136, 255, 0.6);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 600px) {
+  .form-card {
+    margin: 2rem 1rem;
+    padding: 1.5rem;
+  }
+
+  button {
+    flex: unset;
+    width: 100%;
+  }
+
+  .buttons {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,67 @@
+package aula03_16_07_2025;
+
+public class Pessoa {
+	// Atributos
+	public String nome;
+	public int idade;
+	public double altura;
+	public char genero;
+	private String cpf;
+	private double contaBancaria;
+
+	// Método Construtor
+	public Pessoa(String nome, int idade, double altura, char genero, String cpf) {
+		this.nome = nome;
+		this.idade = idade;
+		this.altura = altura;
+		this.genero = genero;
+		this.cpf = cpf;
+	}
+	
+	//Métodos get e set
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	
+	public String getNome() {
+		return nome;
+	}
+	
+	// Método
+	public void apresentar() {
+		System.out.println("Meu nome é " + nome + " e possuo " + idade + " anos de idade, tenho " + altura
+				+ " de altura, meu cpf é " + cpf + " e sou do gênero " + genero + ".");
+	}
+
+	public void criarContaBancaria() {
+		if (idade >= 18) {
+			contaBancaria = 0.00;
+			System.out.println("Sua conta foi criada com sucesso!");
+		} else {
+			System.out.println("Menor de idade não pode criar conta bancaria");
+		}
+	}
+	
+	public void depositar(double valor) {
+		contaBancaria += valor;
+		System.out.println("Valor depositado na sua conta!");
+	}
+
+	public void consultarSaldo() {
+		System.out.println(contaBancaria);
+	}
+
+	public void sacar(double valor) {
+		if (valor>contaBancaria) {
+			System.out.println("Você não possui esse saldo para sacar!");
+		}
+		else {
+			contaBancaria -= valor;
+			System.out.println("Valor sacado!");
+		}
+		
+	}
+
+}
+
+

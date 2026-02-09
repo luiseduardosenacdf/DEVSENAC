@@ -1,0 +1,4 @@
+INDEX VERSION 1.134+C:\Users\luis34288836\Desktop\Desenvolvimento de Sistemas\Eclipse\Atividades Em Aula\exe11082025\.metadata\.plugins\org.eclipse.jdt.core
+1865797976.index
+3714666293.index
+4204514320.index

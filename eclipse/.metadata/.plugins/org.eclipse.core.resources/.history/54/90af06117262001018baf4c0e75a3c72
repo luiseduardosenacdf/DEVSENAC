@@ -1,0 +1,25 @@
+package aula03_16_07_2025;
+
+public class Pessoa {
+	//Atributos
+	String nome;
+	int idade;
+	double altura;
+	char genero;
+	String cpf;
+	
+	//Método Construtor
+	public Pessoa(String nome, int idade, double altura, char genero, String cpf) {
+		this.nome = nome;
+		this.idade = idade;
+		this.altura = altura;
+		this.genero = genero;
+		this.cpf = cpf;
+		
+	}
+	
+	//Método
+	public void apresentar () {
+		System.out.println("Meu nome é "+nome+" e tenho "+idade+" anos de idade.");
+	}
+}

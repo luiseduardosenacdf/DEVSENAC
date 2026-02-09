@@ -1,0 +1,32 @@
+package aula16exercicio_04_08_2025;
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        String[] produto = new String[1];
+        double[] preco = new double[1];
+
+        System.out.print("Selecione o Produto do Cardápio: ");
+        produto[0] = scanner.nextLine();
+
+        scanner.close();
+    }
+}
+
+				
+		/*
+		System.out.println("--- Menu da Lanchonete ---");
+		System.out.println();
+		System.out.println("1. X-Burguer................. R$ 10,00");
+		System.out.println("2. X-Salada.................. R$ 12,00");
+		System.out.println("3. X-Bacon................... R$ 14,00");
+		System.out.println("4. Batata Frita.............. R$ 8,00");
+		System.out.println("5. Refrigerante Lata......... R$ 5,00");
+		System.out.println("6. Suco Natural.............. R$ 6,00");
+		System.out.println("7. Água Mineral.............. R$ 3,00");
+		System.out.println();
+		System.out.println("Escolha uma opção pelo número:"); */

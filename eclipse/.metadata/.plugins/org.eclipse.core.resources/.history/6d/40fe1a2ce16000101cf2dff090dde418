@@ -1,0 +1,18 @@
+package aula01_14_07_2025;
+
+public class main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("Hello Word!!!");
+		
+		int idade = 28;
+		double altura = 1.70;
+		char letra = 'A';
+		
+		System.out.println(idade);
+		System.out.println(altura);
+		System.out.println(letra);
+	}
+
+}

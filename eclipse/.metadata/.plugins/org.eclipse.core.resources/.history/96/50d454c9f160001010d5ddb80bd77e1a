@@ -1,0 +1,17 @@
+package aula01_14_07_2025;
+
+import java.util.Scanner;
+
+public class main {
+    public static void main(String[] args) {
+        double nota1 = 5, nota2 = 7.7;
+        double media = (nota1 + nota2) / 2
+        		
+        if(media >= 5) {
+        	System.out.println("Aluno aprovado!");
+        }
+        else {
+        	System.out.println("Aluno reprovado!");
+        }
+    }
+}

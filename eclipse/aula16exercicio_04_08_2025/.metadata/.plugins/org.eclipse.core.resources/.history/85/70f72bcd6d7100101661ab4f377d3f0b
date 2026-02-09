@@ -1,0 +1,16 @@
+package aula16exercicio_04_08_2025;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		System.out.println("--- Menu da Lanchonete ---");
+		System.out.println("");
+		System.out.println();
+		System.out.println();
+		System.out.println();
+		System.out.println();
+
+	}
+
+}

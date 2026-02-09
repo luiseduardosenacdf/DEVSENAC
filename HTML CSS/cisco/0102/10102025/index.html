@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulário Encantado ✨</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <div class="background"></div>
+
+  <main class="form-card">
+    <header>
+      <h1>Formulário</h1>
+      <p>Preencha os campos abaixo e envie sua mensagem.</p>
+    </header>
+
+    <form action="#" method="post" novalidate>
+      <fieldset>
+        <legend>Dados pessoais</legend>
+
+        <label for="campo_nome">Nome <span>*</span></label>
+        <input id="campo_nome" name="nome" type="text" placeholder="Digite seu nome completo" required>
+
+        <label for="campo_email">Email <span>*</span></label>
+        <input id="campo_email" name="email" type="email" placeholder="seu@exemplo.com" required>
+
+        <label for="campo_senha">Senha <span>*</span></label>
+        <input id="campo_senha" name="senha" type="password" placeholder="Mínimo 8 caracteres" minlength="8" required>
+      </fieldset>
+
+      <fieldset>
+        <legend>Animal de estimação <span>*</span></legend>
+        <label><input type="radio" name="animal" value="cachorro" required> 🐶 Cachorro</label>
+        <label><input type="radio" name="animal" value="gato"> 🐱 Gato</label>
+        <label><input type="radio" name="animal" value="passarinho"> 🐦 Passarinho</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>O que você tem em casa?</legend>
+        <label><input type="checkbox" name="itens[]" value="TV"> 📺 TV</label>
+        <label><input type="checkbox" name="itens[]" value="Geladeira"> 🧊 Geladeira</label>
+        <label><input type="checkbox" name="itens[]" value="Computador"> 💻 Computador</label>
+      </fieldset>
+
+      <label for="cor">Escolha uma cor <span>*</span></label>
+      <select id="cor" name="cor" required>
+        <option value="" disabled selected>Selecione uma cor</option>
+        <option value="vermelho">Vermelho</option>
+        <option value="azul">Azul</option>
+        <option value="amarelo">Amarelo</option>
+        <option value="verde">Verde</option>
+      </select>
+
+      <label for="mensagem">Mensagem</label>
+      <textarea id="mensagem" name="mensagem" rows="6" placeholder="Digite sua mensagem..."></textarea>
+
+      <div class="buttons">
+        <button type="submit" class="enviar">Enviar</button>
+        <button type="reset" class="limpar">Limpar</button>
+      </div>
+    </form>
+  </main>
+
+  <footer>
+    <p>Feito com 💜 por <strong>Luis Eduardo de Sousa</strong> • Dev. Júnior</p>
+  </footer>
+
+  <script>
+    const form = document.querySelector("form");
+    form.addEventListener("submit", e => {
+      e.preventDefault();
+      alert("✨ Formulário enviado com sucesso! ✨");
+      form.reset();
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,4 @@
+INDEX VERSION 1.134+C:\Users\luis34288836\Desktop\Desenvolvimento de Sistemas\Eclipse\Telas em Java\01\.metadata\.plugins\org.eclipse.jdt.core
+3714666293.index
+4017501340.index
+1865797976.index

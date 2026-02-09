@@ -1,0 +1,27 @@
+package aula08_24_07_2025;
+
+import java.io.FileWriter;
+import java.io.PrintWriter;
+import java.io.IOException;
+
+public class EscritorArquivo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		try {
+			PrintWriter escritor = new PrintWriter(new FileWriter("log.txt"));
+			
+			escritor.println("Linha 1: Olá, mundo!");
+			escritor.println("Linha 2: Escrevendo dentro de um arquivo com Java");
+			
+			escritor.close();
+			
+			System.out.println("O arquivo foi escrito!");
+		} catch(IOException erro) {
+			erro.printStackTrace();
+			System.out.println("Erro de leitura no arquivo!");
+		}
+	
+	}
+
+}

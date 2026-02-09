@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- links externos -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+    integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <link rel="stylesheet" href="../css/style.css">
+  <title>Sobre — Explore Brasília</title>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <nav class="navbar navbar-expand-lg fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="../index.html"><img src="../imgs/icon.png" width="50" alt="Explore Brasília"></a>
+
+        <div
+          class="offcanvas offcanvas-end"
+          tabindex="-1"
+          id="offcanvasNavbar"
+          aria-labelledby="offcanvasNavbarLabel"
+        >
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
+              <img width="200px" src="../gerais/imgs/logo_SCN.icon" alt="Logo" />
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+              <li class="nav-item">
+                <a class="nav-link mx-lg-2" href="../home.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link mx-lg-2" href="../serviços/servicos.html">Serviços</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link mx-lg-2" href="../comunidade/comunidade.html">Comunidade</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link mx-lg-2 active" aria-current="page" href="sobre.html">Sobre</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <a href="../login/login.html" class="login-button">Login</a>
+        <a href="/logoff" style="display: none" class="logoff-button">Sair</a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasNavbar"
+          aria-controls="offcanvasNavbar"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Conteúdo principal -->
+  <main class="container" style="padding-top: 110px; padding-bottom: 4rem;">
+    <!-- Seção principal -->
+    <section class="text-center mb-5">
+      <h1 class="display-5 fw-bold mb-3">Sobre o Explore Brasília</h1>
+      <p class="lead text-muted">
+        O <strong>Explore Brasília</strong> é um portal criado para conectar a comunidade de Samambaia e regiões próximas às principais notícias, eventos e oportunidades locais.
+      </p>
+    </section>
+
+    <!-- Nossa missão -->
+    <section class="row align-items-center mb-5">
+      <div class="col-md-6">
+        <img src="img/samambaia.jpg" alt="Samambaia" class="img-fluid rounded shadow-sm" />
+      </div>
+      <div class="col-md-6 mt-4 mt-md-0">
+        <h2 class="h4 mb-3">Nossa Missão</h2>
+        <p class="text-muted">
+          Promover o acesso à informação, incentivar a economia local e fortalecer o sentimento de pertencimento entre os moradores de Brasília e região.
+        </p>
+        <p class="text-muted">
+          Acreditamos que uma comunidade bem informada é uma comunidade mais forte, participativa e solidária.
+        </p>
+      </div>
+    </section>
+
+    <!-- Nossos valores -->
+    <section class="text-center py-5 bg-light rounded-3">
+      <div class="container">
+        <h2 class="h4 mb-4">Nossos Valores</h2>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <i class="fa-solid fa-handshake-angle fa-2x mb-3" style="color:#00ad0e;"></i>
+            <h3 class="h6">Colaboração</h3>
+            <p class="text-muted">Trabalhamos juntos com cidadãos, comerciantes e instituições para gerar impacto positivo.</p>
+          </div>
+          <div class="col-md-4">
+            <i class="fa-solid fa-bullhorn fa-2x mb-3" style="color:#C08519;"></i>
+            <h3 class="h6">Transparência</h3>
+            <p class="text-muted">Priorizamos informações confiáveis, verificadas e acessíveis a todos.</p>
+          </div>
+          <div class="col-md-4">
+            <i class="fa-solid fa-leaf fa-2x mb-3" style="color:#004aad;"></i>
+            <h3 class="h6">Sustentabilidade</h3>
+            <p class="text-muted">Valorizamos práticas sustentáveis e a responsabilidade social no desenvolvimento local.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Equipe -->
+    <section class="my-5">
+      <h2 class="h4 text-center mb-4">Nossa Equipe</h2>
+      <div class="row g-4 justify-content-center">
+        <div class="col-10 col-md-4 col-lg-3 text-center">
+          <img src="img/team1.jpg" alt="Membro da equipe" class="img-fluid rounded-circle shadow-sm mb-3" />
+          <h3 class="h6">Ana Beatriz</h3>
+          <p class="text-muted small">Fundadora e Editora-chefe</p>
+        </div>
+        <div class="col-10 col-md-4 col-lg-3 text-center">
+          <img src="img/team2.jpg" alt="Membro da equipe" class="img-fluid rounded-circle shadow-sm mb-3" />
+          <h3 class="h6">João Marcos</h3>
+          <p class="text-muted small">Coordenador de Comunidade</p>
+        </div>
+        <div class="col-10 col-md-4 col-lg-3 text-center">
+          <img src="img/team3.jpg" alt="Membro da equipe" class="img-fluid rounded-circle shadow-sm mb-3" />
+          <h3 class="h6">Larissa Souza</h3>
+          <p class="text-muted small">Designer e Mídias Digitais</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-4 my-5 bg-light rounded-3 text-center">
+      <h3 class="h5 mb-2">Quer fazer parte do projeto?</h3>
+      <p class="text-muted mb-3">Entre em contato e venha fortalecer a comunicação local conosco.</p>
+      <a href="../login/login.html" class="login-button">Junte-se a nós</a>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div id="footer_content">
+      <div id="footer_contacts">
+        <div class="img-logo-footer">
+          <img width="120px" src="../imgs/icon.png" alt="Explore Brasília" />
+        </div>
+        <p>Conectando você às principais notícias de Samambaia.</p>
+
+        <div id="footer_social_media">
+          <a href="#" class="footer-link" id="instagram" aria-label="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href="#" class="footer-link" id="whatsapp" aria-label="WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+          </a>
+          <a href="#" class="footer-link" id="x-twitter" aria-label="X / Twitter">
+            <i class="fa-brands fa-x-twitter"></i>
+          </a>
+        </div>
+      </div>
+
+      <ul class="footer-list">
+        <li><h3>Informações</h3></li>
+        <li><a href="sobre.html" class="footer-link">Sobre Nós</a></li>
+        <li><a href="#" class="footer-link">Trabalhe Conosco</a></li>
+      </ul>
+
+      <ul class="footer-list">
+        <li><h3>Ajuda</h3></li>
+        <li><a href="../comunidade/comunidade.html" class="footer-link">FAQ's</a></li>
+        <li><a href="../Termos_de_uso/tdu.html" class="footer-link">Termos de Uso</a></li>
+        <li><a href="../Termos_de_uso/tdu.html" class="footer-link">Política de Privacidade</a></li>
+      </ul>
+
+      <div id="footer_subscribe">
+        <h3>Notícias</h3>
+        <p>Insira seu e-mail para ser notificado das notícias<br />e novidades em Samambaia.</p>
+        <div id="input_group">
+          <input type="email" id="email_subscribe" placeholder="seu@email.com" aria-label="E-mail para receber novidades" />
+          <button type="button" aria-label="Inscrever">
+            <i class="fa-regular fa-envelope"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div id="footer_copyright">&copy; 2025 Todos os Direitos Reservados</div>
+  </footer>
+
+  <!-- Bootstrap scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-..." crossorigin="anonymous"></script>
+</body>
+</html>

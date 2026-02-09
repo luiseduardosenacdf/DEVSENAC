@@ -1,0 +1,36 @@
+package aula16_04_08_2025;
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        String[] nomes = new String[5];
+        double[] nota1 = new double[5];
+        double[] nota2 = new double[5];
+        double[] media = new double[5];
+
+        for (int i = 0; i < 5; i++) {
+            System.out.println("Digite o nome do aluno " + (i + 1) + ":");
+            nomes[i] = scanner.nextLine();
+
+            System.out.println("Digite a primeira nota de " + nomes[i] + ":");
+            nota1[i] = scanner.nextDouble();
+
+            System.out.println("Digite a segunda nota de " + nomes[i] + ":");
+            nota2[i] = scanner.nextDouble();
+
+            media[i] = (nota1[i] + nota2[i]) / 2;
+
+            scanner.nextLine(); // limpa o ENTER deixado por nextDouble
+        }
+
+        System.out.println("\n--- Médias Finais ---");
+        for (int i = 0; i < 5; i++) {
+            System.out.println(nomes[i] + " - Média: " + media[i]);
+        }
+
+        scanner.close();
+    }
+}

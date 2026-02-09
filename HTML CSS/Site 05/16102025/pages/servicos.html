@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <!-- Bootstrap & Font Awesome -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" />
+  <!-- CSS do projeto -->
+  <link rel="stylesheet" href="../css/style.css" />
+  <title>Serviços — Explore Brasília</title>
+</head>
+<body>
+  <!-- NAVBAR -->
+  <header>
+    <nav class="navbar navbar-expand-lg fixed-top navbar-transparent" aria-label="Navegação principal">
+      <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center" href="../index.html">
+          <img src="../img/icons/icon.png" width="50" height="50" alt="Logo Explore Brasília" loading="lazy" />
+          <span class="ms-2 d-none d-lg-inline">Explore Brasília</span>
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasNavbar"
+          aria-controls="offcanvasNavbar"
+          aria-expanded="false"
+          aria-label="Abrir menu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+          <div class="offcanvas-header">
+            <h5 id="offcanvasNavbarLabel" class="offcanvas-title">Menu</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Fechar"></button>
+          </div>
+
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+              <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+              <li class="nav-item"><a class="nav-link active" aria-current="page" href="servicos.html">Serviços</a></li>
+              <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+              <li class="nav-item"><a class="nav-link" href="../sobre/sobre.html">Sobre</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="d-flex align-items-center ms-2">
+          <a href="../login/login.html" class="btn btn-outline-primary me-2" aria-label="Login">Login</a>
+          <a href="/logoff" style="display:none" class="btn btn-outline-secondary" aria-hidden="true">Sair</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main role="main" class="mt-5">
+    <!-- HERO / TÍTULO -->
+    <section class="py-5 text-center" style="padding-top:100px;">
+      <div class="container">
+        <h1 class="display-5 fw-bold">Nossos Serviços</h1>
+        <p class="lead text-muted">Conectamos você às melhores soluções e recursos em Samambaia e Brasília.</p>
+      </div>
+    </section>
+
+    <!-- GRIDE DE SERVIÇOS -->
+    <section id="servicos" class="py-4">
+      <div class="container">
+        <h2 class="h4 mb-4">O que oferecemos</h2>
+
+        <div class="row g-4">
+          <!-- Serviço 1 -->
+          <article class="col-12 col-md-6 col-lg-4" aria-labelledby="svc-news">
+            <div class="card h-100">
+              <div class="card-body d-flex flex-column">
+                <div class="mb-3" aria-hidden="true">
+                  <i class="fa-solid fa-bullhorn fa-2x" style="color:var(--color-accent);"></i>
+                </div>
+                <h3 id="svc-news" class="card-title h5">Divulgação de Notícias</h3>
+                <p class="card-text text-muted flex-grow-1">Publicamos notícias locais, alertas e agendas culturais com curadoria para a comunidade.</p>
+                <a href="#" class="btn btn-sm btn-green mt-3" role="button">Saiba mais</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Serviço 2 -->
+          <article class="col-12 col-md-6 col-lg-4" aria-labelledby="svc-ads">
+            <div class="card h-100">
+              <div class="card-body d-flex flex-column">
+                <div class="mb-3" aria-hidden="true">
+                  <i class="fa-solid fa-hand-holding-dollar fa-2x" style="color:#32a128;"></i>
+                </div>
+                <h3 id="svc-ads" class="card-title h5">Anúncios Locais</h3>
+                <p class="card-text text-muted flex-grow-1">Espaços de anúncio para pequenos negócios e prestadores de serviços da região.</p>
+                <a href="#" class="btn btn-sm btn-gold mt-3" role="button">Anunciar</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Serviço 3 -->
+          <article class="col-12 col-md-6 col-lg-4" aria-labelledby="svc-events">
+            <div class="card h-100">
+              <div class="card-body d-flex flex-column">
+                <div class="mb-3" aria-hidden="true">
+                  <i class="fa-solid fa-user-group fa-2x" style="color:var(--color-primary);"></i>
+                </div>
+                <h3 id="svc-events" class="card-title h5">Eventos da Comunidade</h3>
+                <p class="card-text text-muted flex-grow-1">Organizamos e divulgamos eventos, reuniões e iniciativas locais para aproximar vizinhos.</p>
+                <a href="../comunidade/comunidade.html" class="btn btn-sm btn-blue mt-3" role="button">Ver eventos</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Serviço 4 -->
+          <article class="col-12 col-md-6 col-lg-4" aria-labelledby="svc-safety">
+            <div class="card h-100">
+              <div class="card-body d-flex flex-column">
+                <div class="mb-3" aria-hidden="true">
+                  <i class="fa-solid fa-shield-halved fa-2x" style="color:#0e0c0c;"></i>
+                </div>
+                <h3 id="svc-safety" class="card-title h5">Segurança e Boletins</h3>
+                <p class="card-text text-muted flex-grow-1">Alertas de segurança e boletins informativos para manter a comunidade informada.</p>
+                <a href="#" class="btn btn-sm btn-dark mt-3" role="button">Receber alertas</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Serviço 5 -->
+          <article class="col-12 col-md-6 col-lg-4" aria-labelledby="svc-jobs">
+            <div class="card h-100">
+              <div class="card-body d-flex flex-column">
+                <div class="mb-3" aria-hidden="true">
+                  <i class="fa-solid fa-briefcase fa-2x" style="color:#7f37c9;"></i>
+                </div>
+                <h3 id="svc-jobs" class="card-title h5">Oportunidades de Trabalho</h3>
+                <p class="card-text text-muted flex-grow-1">Listagem de vagas locais e suporte a quem procura emprego na região.</p>
+                <a href="#" class="btn btn-sm btn-purple mt-3" role="button">Ver vagas</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Serviço 6 -->
+          <article class="col-12 col-md-6 col-lg-4" aria-labelledby="svc-support">
+            <div class="card h-100">
+              <div class="card-body d-flex flex-column">
+                <div class="mb-3" aria-hidden="true">
+                  <i class="fa-solid fa-hands-holding-circle fa-2x" style="color:#ff9007;"></i>
+                </div>
+                <h3 id="svc-support" class="card-title h5">Suporte ao Cidadão</h3>
+                <p class="card-text text-muted flex-grow-1">Guia de serviços públicos, canais de denúncia e orientações úteis para moradores.</p>
+                <a href="#" class="btn btn-sm btn-gold mt-3" role="button">Como acessar</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA / PUBLICAR -->
+    <section class="py-4 my-5 bg-light rounded-3">
+      <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between gap-3">
+        <div>
+          <h3 class="h5 mb-1">Quer publicar um anúncio ou evento?</h3>
+          <p class="mb-0 text-muted">Entre em contato conosco para oportunidades de divulgação e parcerias.</p>
+        </div>
+        <div>
+          <a href="../login/login.html" class="btn btn-primary">Cadastrar anúncio</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-dark text-light pt-5">
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-md-4">
+          <img width="120" src="../img/icons/icon.png" alt="Logo Explore Brasília" loading="lazy" />
+          <p class="mt-3">Conectando você às principais notícias de Samambaia.</p>
+          <div>
+            <a href="#" class="text-light me-2" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="text-light me-2" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="#" class="text-light" aria-label="X / Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+          </div>
+        </div>
+
+        <nav class="col-md-2" aria-label="Informações">
+          <h5>Informações</h5>
+          <ul class="list-unstyled">
+            <li><a href="../sobre/sobre.html" class="text-light">Sobre Nós</a></li>
+            <li><a href="#" class="text-light">Trabalhe Conosco</a></li>
+          </ul>
+        </nav>
+
+        <nav class="col-md-2" aria-label="Ajuda">
+          <h5>Ajuda</h5>
+          <ul class="list-unstyled">
+            <li><a href="../comunidade/comunidade.html" class="text-light">FAQ</a></li>
+            <li><a href="../Termos_de_uso/tdu.html" class="text-light">Termos de Uso</a></li>
+            <li><a href="../Termos_de_uso/tdu.html" class="text-light">Política de Privacidade</a></li>
+          </ul>
+        </nav>
+
+        <div class="col-md-4">
+          <h5>Notícias</h5>
+          <p>Insira seu e-mail para ser notificado das novidades em Samambaia.</p>
+          <form id="subscribe-form" class="d-flex" role="search" aria-label="Formulário de inscrição por e-mail" onsubmit="event.preventDefault();">
+            <label for="email_subscribe" class="visually-hidden">E-mail</label>
+            <input type="email" id="email_subscribe" class="form-control me-2" placeholder="seu@email.com" required>
+            <button class="btn btn-primary" type="submit" aria-label="Inscrever"><i class="fa-regular fa-envelope"></i></button>
+          </form>
+        </div>
+      </div>
+
+      <div class="text-center mt-4 pb-3 small">&copy; 2025 Todos os Direitos Reservados — Explore Brasília</div>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Navbar - troca classe com scroll
+    (function () {
+      const navbar = document.querySelector('.navbar');
+      if (!navbar) return;
+      window.addEventListener('scroll', function () {
+        if (window.scrollY > 50) {
+          navbar.classList.add('navbar-scrolled');
+          navbar.classList.remove('navbar-transparent');
+        } else {
+          navbar.classList.add('navbar-transparent');
+          navbar.classList.remove('navbar-scrolled');
+        }
+      });
+    })();
+
+    // Simples handler para formulário de newsletter
+    document.getElementById('subscribe-form')?.addEventListener('submit', function () {
+      const email = document.getElementById('email_subscribe').value.trim();
+      if (!email) return alert('Por favor insira um e-mail válido.');
+      alert('Obrigado! E-mail cadastrado: ' + email);
+      this.reset();
+    });
+
+    // Acessibilidade: foco no primeiro link ao abrir o offcanvas
+    const offcanvasEl = document.getElementById('offcanvasNavbar');
+    offcanvasEl?.addEventListener('shown.bs.offcanvas', function () {
+      const firstLink = offcanvasEl.querySelector('.navbar-nav a');
+      firstLink?.focus();
+    });
+  </script>
+</body>
+</html>

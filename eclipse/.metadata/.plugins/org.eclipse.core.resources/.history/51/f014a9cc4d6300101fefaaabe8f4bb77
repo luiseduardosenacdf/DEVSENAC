@@ -1,0 +1,12 @@
+package aula04exercicio_17_07_2025;
+
+public class Carro extends Veiculo {
+	public void mover() {
+		System.out.println("O carro está andando na estrada.");
+	}
+	public String tipoCombustivel() {
+		System.out.println("Gasolina");
+		return null;
+	}
+		
+}

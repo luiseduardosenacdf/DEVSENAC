@@ -1,0 +1,12 @@
+use ecommerce;
+show tables;
+describe usuarios;
+SELECT * FROM usuarios;
+DESCRIBE usuarios;
+DELETE FROM usuarios;
+SELECT * FROM enderecos;
+ALTER TABLE enderecos DROP COLUMN complemento;
+SELECT * FROM categorias;
+SELECT * FROM produtos;
+SELECT * FROM pedidos;
+SELECT * FROM itens_pedido;

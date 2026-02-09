@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Biblioteca da Faculdade Católica de Brasília</title>
+  <meta name="description" content="Biblioteca da Faculdade Católica de Brasília — acervo, renovação online, empréstimo interbibliotecário e apoio à pesquisa.">
+
+  <!-- Preload hero image to improve LCP -->
+  <link rel="preload" as="image" href="img/entrada.jpg">
+
+  <!-- Link para o CSS (caminho relativo correto) -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Skip link -->
+  <a class="skip-link" href="#main">Pular para o conteúdo</a>
+
+  <!-- HEADER -->
+  <header class="site-header" role="banner">
+    <div class="container header-container">
+      <a href="#inicio" class="logo-link" aria-label="Ir para Início">
+        <img src="img/logo.png" alt="Faculdade Católica de Brasília - Biblioteca" class="logo">
+      </a>
+
+      <nav id="mainNav" aria-label="Menu principal" role="navigation">
+        <ul id="navList" class="menu">
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#acervo">Consulta ao Acervo</a></li>
+          <li><a href="#renovacao">Renovação</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+
+      <button id="menuToggle" aria-controls="navList" aria-expanded="false" aria-label="Abrir menu de navegação">☰</button>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main id="main">
+    <!-- HERO (background definido em css/style.css via .hero .hero-bg) -->
+    <section id="inicio" class="hero" role="region" aria-label="Banner principal">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="overlay container">
+        <h1>Biblioteca da Faculdade Católica de Brasília</h1>
+        <p>Um espaço de saber, fé e pesquisa</p>
+        <a href="#acervo" class="btn">Consultar Acervo</a>
+      </div>
+    </section>
+
+    <!-- SOBRE -->
+    <section id="sobre" class="sobre container" aria-labelledby="sobre-titulo">
+      <div class="texto">
+        <h2 id="sobre-titulo">Sobre a Biblioteca</h2>
+        <p>
+          A Biblioteca da Faculdade Católica de Brasília oferece aos alunos, professores e à comunidade acadêmica um ambiente acolhedor para estudo, pesquisa e aprendizado.
+          Nosso acervo conta com milhares de títulos nas áreas de Teologia, Filosofia, Educação, Psicologia e Ciências Humanas.
+        </p>
+      </div>
+      <img src="img/interior.jpg"
+           alt="Interior da Biblioteca"
+           class="imagem-sobre">
+    </section>
+
+    <!-- SERVIÇOS -->
+    <section id="servicos" class="servicos" aria-labelledby="servicos-titulo">
+      <div class="container">
+        <h2 id="servicos-titulo" class="titulo-secao">Nossos Serviços</h2>
+        <div class="cards" role="list">
+          <article class="card" role="listitem" aria-labelledby="srv1">
+            <h3 id="srv1">📚 Consulta ao Acervo</h3>
+            <p>Acesse nosso catálogo físico e digital.</p>
+          </article>
+          <article class="card" role="listitem" aria-labelledby="srv2">
+            <h3 id="srv2">🔁 Renovação Online</h3>
+            <p>Renove seus empréstimos com facilidade.</p>
+          </article>
+          <article class="card" role="listitem" aria-labelledby="srv3">
+            <h3 id="srv3">🎓 Orientação de Pesquisa</h3>
+            <p>Auxílio na normalização e referências acadêmicas.</p>
+          </article>
+          <article class="card" role="listitem" aria-labelledby="srv4">
+            <h3 id="srv4">🧾 Empréstimo Interbibliotecário</h3>
+            <p>Solicite livros de outras instituições conveniadas.</p>
+          </article>
+          <article class="card" role="listitem" aria-labelledby="srv5">
+            <h3 id="srv5">💻 Acesso Remoto</h3>
+            <p>Consulte bases de dados e periódicos online.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACERVO -->
+    <section id="acervo" class="acervo container" aria-labelledby="acervo-titulo">
+      <h2 id="acervo-titulo">Consulta ao Acervo</h2>
+      <div class="busca-acervo" role="search" aria-label="Pesquisar acervo">
+        <label for="buscaLivro" class="sr-only">Pesquisar por título ou autor</label>
+        <input type="search" id="buscaLivro" name="q" placeholder="Digite o título ou autor" aria-label="Pesquisar no acervo">
+        <button id="btnPesquisar" class="btn" type="button">Pesquisar</button>
+      </div>
+      <div id="resultados" aria-live="polite"></div>
+    </section>
+
+    <!-- RENOVAÇÃO -->
+    <section id="renovacao" class="renovacao container" aria-labelledby="renovacao-titulo">
+      <h2 id="renovacao-titulo">Renovação de Empréstimo</h2>
+      <form id="formRenovacao" action="#" method="post" novalidate>
+        <div class="form-row">
+          <label for="nome">Nome completo</label>
+          <input id="nome" name="nome" type="text" placeholder="Nome completo" required>
+        </div>
+        <div class="form-row">
+          <label for="matricula">Matrícula</label>
+          <input id="matricula" name="matricula" type="text" placeholder="Matrícula" required>
+        </div>
+        <div class="form-row">
+          <label for="codigoLivro">Código do livro</label>
+          <input id="codigoLivro" name="codigo_livro" type="text" placeholder="Código do livro" required>
+        </div>
+        <div class="form-row">
+          <label for="dataRenovacao">Data desejada</label>
+          <input id="dataRenovacao" name="data_renovacao" type="date" required>
+        </div>
+        <button type="submit" class="btn">Solicitar Renovação</button>
+      </form>
+      <p id="mensagemSucesso" class="mensagem-sucesso" role="status" aria-live="polite"></p>
+    </section>
+
+    <!-- CONTATO -->
+    <section id="contato" class="contato" aria-labelledby="contato-titulo">
+      <div class="container">
+        <h2 id="contato-titulo" class="titulo-secao">Contato</h2>
+        <div class="contato-grid">
+          <div class="contato-info">
+            <p><strong>Endereço:</strong><br>QS 07, Lote 01 - Taguatinga, Brasília - DF</p>
+            <p><strong>Telefone:</strong> <a href="tel:+556133330000">(61) 3333-0000</a></p>
+            <p><strong>Email:</strong> <a href="mailto:biblioteca@catolica.edu.br">biblioteca@catolica.edu.br</a></p>
+            <p><strong>Horário:</strong> Seg a Sex, 8h às 21h</p>
+          </div>
+          <div class="contato-mapa">
+            <iframe
+              src="https://www.google.com/maps?q=Faculdade+Cat%C3%B3lica+de+Bras%C3%ADlia&output=embed"
+              loading="lazy"
+              title="Mapa Biblioteca"
+              referrerpolicy="no-referrer-when-downgrade"
+              style="border:0;width:100%;height:100%;">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p>&copy; <span id="anoAtual"></span> Faculdade Católica de Brasília - Biblioteca Universitária</p>
+    </div>
+  </footer>
+
+  <!-- SCRIPT (comportamento do menu, busca e formulário — mantém IDs usados no CSS) -->
+  <script>
+    // Atualiza ano no rodapé
+    (function() {
+      const ano = new Date().getFullYear();
+      const el = document.getElementById('anoAtual');
+      if (el) el.textContent = ano;
+    })();
+
+    // Menu toggle + acessibilidade
+    (function() {
+      const menuToggle = document.getElementById('menuToggle');
+      const navList = document.getElementById('navList');
+      if (!menuToggle || !navList) return;
+
+      menuToggle.addEventListener('click', () => {
+        const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+        menuToggle.setAttribute('aria-expanded', String(!expanded));
+        navList.classList.toggle('open');
+        if (!expanded) {
+          const firstLink = navList.querySelector('a');
+          if (firstLink) firstLink.focus();
+        } else {
+          menuToggle.focus();
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          menuToggle.setAttribute('aria-expanded', 'false');
+          navList.classList.remove('open');
+          menuToggle.focus();
+        }
+      });
+    })();
+
+    // Busca demo (substituir por fetch('/api/...') no backend)
+    (function() {
+      const resultados = document.getElementById('resultados');
+      const input = document.getElementById('buscaLivro');
+      const btn = document.getElementById('btnPesquisar');
+      if (!input || !btn || !resultados) return;
+
+      const mockAcervo = [
+        {id: 'A001', titulo: 'Introdução à Teologia', autor: 'João Silva', disponivel: true},
+        {id: 'A002', titulo: 'Filosofia Moderna', autor: 'Maria Souza', disponivel: false},
+        {id: 'A003', titulo: 'Psicologia da Educação', autor: 'Carlos Pereira', disponivel: true},
+      ];
+
+      function escapeHtml(text) {
+        return String(text)
+          .replaceAll('&', '&amp;')
+          .replaceAll('<', '&lt;')
+          .replaceAll('>', '&gt;')
+          .replaceAll('"', '&quot;')
+          .replaceAll("'", '&#039;');
+      }
+
+      function renderResultados(items) {
+        if (!items.length) {
+          resultados.innerHTML = '<p>Nenhum resultado encontrado.</p>';
+          return;
+        }
+        const html = items.map(i => (
+          `<div class="resultado-item">
+             <strong>${escapeHtml(i.titulo)}</strong> — ${escapeHtml(i.autor)}
+             <div class="meta">Código: ${escapeHtml(i.id)} | ${i.disponivel ? 'Disponível' : 'Indisponível'}</div>
+           </div>`
+        )).join('');
+        resultados.innerHTML = html;
+      }
+
+      function buscarLivro() {
+        const q = (input.value || '').trim().toLowerCase();
+        if (!q) {
+          resultados.innerHTML = '<p>Digite um termo para pesquisar.</p>';
+          return;
+        }
+        const resultadosSimples = mockAcervo.filter(item =>
+          item.titulo.toLowerCase().includes(q) || item.autor.toLowerCase().includes(q) || item.id.toLowerCase() === q
+        );
+        renderResultados(resultadosSimples);
+      }
+
+      btn.addEventListener('click', buscarLivro);
+      input.addEventListener('keydown', (e) => { if (e.key === 'Enter') buscarLivro(); });
+    })();
+
+    // Form renovação demo
+    (function() {
+      const form = document.getElementById('formRenovacao');
+      const mensagem = document.getElementById('mensagemSucesso');
+      if (!form || !mensagem) return;
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const data = new FormData(form);
+        if (!data.get('nome') || !data.get('matricula') || !data.get('codigo_livro') || !data.get('data_renovacao')) {
+          mensagem.textContent = 'Por favor, preencha todos os campos.';
+          mensagem.className = 'mensagem-error';
+          return;
+        }
+        mensagem.textContent = 'Renovação solicitada (demo). Substitua por envio real ao backend.';
+        mensagem.className = 'mensagem-sucesso';
+        form.reset();
+      });
+    })();
+  </script>
+</body>
+</html>

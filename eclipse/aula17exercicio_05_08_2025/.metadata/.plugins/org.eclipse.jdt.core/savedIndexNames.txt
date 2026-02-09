@@ -1,0 +1,4 @@
+INDEX VERSION 1.134+C:\Users\luis34288836\Desktop\Desenvolvimento de Sistemas\eclipse\aula17exercicio_05_08_2025\.metadata\.plugins\org.eclipse.jdt.core
+1865797976.index
+788926942.index
+228563392.index

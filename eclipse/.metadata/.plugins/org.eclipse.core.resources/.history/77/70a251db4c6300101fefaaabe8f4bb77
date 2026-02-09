@@ -1,0 +1,11 @@
+package aula04exercicio_17_07_2025;
+
+public class Bicicleta extends Veiculo {
+	public void mover() {
+		System.out.println("A bicicleta está sendo pedalada.");
+	}
+}
+
+
+
+

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="br.com.banco.model.Conta"/>
+    <fullyQualifiedTypeName name="br.com.banco.model.Tributavel"/>
+    <fullyQualifiedTypeName name="br.com.banco.contas.ContaCorrente"/>
+    <fullyQualifiedTypeName name="br.com.banco.contas.ContaPoupanca"/>
+</qualifiedTypeNameHistroy>

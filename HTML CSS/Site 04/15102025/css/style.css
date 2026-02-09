@@ -1,0 +1,322 @@
+/* ===========================
+   Style.css - Sabor na Web 🍷
+   Tema: Clássico Gourmet
+   Responsivo | Elegante | Acessível
+=========================== */
+
+/* --- Reset e Tipografia --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    background-color: #fdf9f5;
+    color: #2b2b2b;
+    line-height: 1.7;
+    scroll-behavior: smooth;
+}
+
+/* ===========================
+   Navbar
+=========================== */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(90deg, #b3541e, #ff8c42);
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6px);
+}
+
+.navbar .logo h1 {
+    color: #fff8ec;
+    font-size: 1.9rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+.navbar .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.navbar .nav-links li a {
+    color: #fff8ec;
+    text-decoration: none;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 3px;
+    transition: color 0.3s ease;
+}
+
+.navbar .nav-links li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #fff8ec;
+    transition: width 0.3s ease;
+}
+
+.navbar .nav-links li a:hover::after,
+.navbar .nav-links li a.active::after {
+    width: 100%;
+}
+
+.navbar .nav-links li a:hover {
+    color: #fff;
+}
+
+/* ===========================
+   Cabeçalho
+=========================== */
+.cabecalho {
+    text-align: center;
+    padding: 4rem 1rem;
+    background: linear-gradient(to right, #ffe5b4, #ffb380);
+    color: #4a2e05;
+}
+
+.cabecalho h1 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+.cabecalho p {
+    font-size: 1.2rem;
+    color: #5a4632;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* ===========================
+   Card Container
+=========================== */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding: 3rem 2rem;
+}
+
+/* ===========================
+   Cards
+=========================== */
+.card {
+    background-color: #fffdf9;
+    border-radius: 14px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.35s ease;
+    border: 1px solid rgba(255, 140, 66, 0.2);
+}
+
+.card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 28px rgba(179, 84, 30, 0.25);
+}
+
+.card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+    color: #b3541e;
+}
+
+.card p {
+    flex-grow: 1;
+    margin-bottom: 1rem;
+    color: #5b4a3a;
+    font-size: 0.95rem;
+}
+
+/* Tags de receita */
+.tags-receita {
+    display: flex;
+    justify-content: flex-start;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.tags-receita .destaque {
+    background-color: #ffe8d0;
+    color: #b3541e;
+    padding: 0.35rem 0.7rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+.destaque-tempo {
+    background-color: #ffe0ba;
+    color: #8a4600;
+}
+
+.destaque-dificuldade {
+    background-color: #ffceb5;
+    color: #994c00;
+}
+
+/* Botão de receita */
+.btn-ver-receita {
+    display: inline-block;
+    text-align: center;
+    padding: 0.7rem 1.1rem;
+    background: linear-gradient(90deg, #ff8c42, #b3541e);
+    color: #fff;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    box-shadow: 0 3px 8px rgba(255, 140, 66, 0.3);
+    transition: all 0.3s ease;
+}
+
+.btn-ver-receita:hover {
+    background: linear-gradient(90deg, #e67e22, #a8431c);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 12px rgba(230, 126, 34, 0.4);
+}
+
+/* ===========================
+   Formulário de Contato
+=========================== */
+.form-container {
+    display: flex;
+    justify-content: center;
+    padding: 4rem 1rem;
+}
+
+.form-contato {
+    background-color: #fffdf9;
+    padding: 2.5rem;
+    border-radius: 14px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 520px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    border: 1px solid rgba(255, 140, 66, 0.15);
+}
+
+.form-contato label {
+    font-weight: 600;
+    color: #4a2e05;
+    font-size: 1rem;
+}
+
+.form-contato input,
+.form-contato textarea {
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    border: 1px solid #cbbba7;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-contato input:focus,
+.form-contato textarea:focus {
+    border-color: #ff8c42;
+    box-shadow: 0 0 6px rgba(255, 140, 66, 0.5);
+    outline: none;
+}
+
+.btn-enviar {
+    background: linear-gradient(90deg, #ff8c42, #b3541e);
+    color: #fff;
+    padding: 0.9rem 1.2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 8px rgba(255, 140, 66, 0.3);
+}
+
+.btn-enviar:hover {
+    background: linear-gradient(90deg, #e67e22, #a8431c);
+    transform: translateY(-2px);
+}
+
+/* ===========================
+   Rodapé
+=========================== */
+.rodape {
+    text-align: center;
+    padding: 2.5rem 1rem;
+    background: linear-gradient(90deg, #b3541e, #ff8c42);
+    color: #fff8ec;
+    font-size: 0.95rem;
+    letter-spacing: 0.3px;
+}
+
+/* ===========================
+   Estados de foco e acessibilidade
+=========================== */
+a:focus,
+button:focus,
+input:focus {
+    outline: 2px dashed #b3541e;
+    outline-offset: 3px;
+}
+
+/* ===========================
+   Responsividade
+=========================== */
+@media (max-width: 1024px) {
+    .card-container {
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cabecalho h1 {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar .logo h1 {
+        font-size: 1.5rem;
+    }
+
+    .card {
+        width: 90%;
+    }
+
+    .btn-ver-receita,
+    .btn-enviar {
+        width: 100%;
+    }
+}

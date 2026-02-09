@@ -1,0 +1,10 @@
+package BancoDeDados;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+
+public class Conexao {
+
+	private static final String URL = "jdbc:mysql://localhost:3307/sistema_clientes";
+
+}

@@ -1,0 +1,19 @@
+package aula03exercicio_16_07_2025;
+
+public class main {
+
+	public static void main(String[] args) {
+		Livro livro1 = new Livro("O Senhor dos Anéis", "J.R.R. Tolkien", 1954);
+		
+		System.out.println(livro1.getTitulo());
+		System.out.println(livro1.getAutor());
+		System.out.println(livro1.getAnoPublica());
+		
+		livro1.setAnoPublicacao(1955);
+		
+		System.out.println(livro1.getTitulo());
+		System.out.println(livro1.getAutor());
+		System.out.println(livro1.getAnoPublica());
+	}
+
+}

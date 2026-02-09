@@ -1,0 +1,5 @@
+package br.com.sistemacomercial.model;
+
+public class Produto {
+
+}

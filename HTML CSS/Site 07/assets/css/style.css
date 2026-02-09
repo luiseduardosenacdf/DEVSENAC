@@ -1,0 +1,264 @@
+/* ===============================
+   GP São Paulo - Fórmula 1 Style
+   Design by Grimoire 🧙‍♂️
+   =============================== */
+
+:root {
+    --vermelho-f1: #d0021b;
+    --preto-carbono: #0d0d0d;
+    --cinza-aço: #1a1a1a;
+    --branco-gelo: #f4f4f4;
+    --gradiente-f1: linear-gradient(135deg, #d0021b, #ff003c, #770000);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--preto-carbono);
+    color: var(--branco-gelo);
+    overflow-x: hidden;
+}
+
+/* ===============================
+     NAVBAR + HEADER
+     =============================== */
+
+header {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+header video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    filter: brightness(50%) saturate(130%);
+}
+
+.navbar {
+    background: rgba(0, 0, 0, 0.45) !important;
+    transition: all 0.5s ease;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar.scrolled {
+    background: rgba(0, 0, 0, 0.9) !important;
+    box-shadow: 0 0 20px rgba(208, 2, 27, 0.4);
+}
+
+.navbar-brand {
+    color: var(--vermelho-f1) !important;
+    letter-spacing: 2px;
+}
+
+.nav-link {
+    color: #fff !important;
+    text-transform: uppercase;
+    font-weight: 500;
+    position: relative;
+    margin-left: 10px;
+    transition: color 0.3s ease;
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    left: 0;
+    bottom: -4px;
+    background: var(--vermelho-f1);
+    transition: width 0.3s;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-link:hover {
+    color: var(--vermelho-f1) !important;
+}
+
+/* ===============================
+     HERO SECTION
+     =============================== */
+
+.hero-content {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    z-index: 2;
+    color: #fff;
+    text-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+}
+
+.hero-content h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 3rem;
+    letter-spacing: 2px;
+    background: var(--gradiente-f1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    color: #ddd;
+}
+
+.btn-glass {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    color: #fff;
+    padding: 12px 36px;
+    margin: 10px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-glass:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: var(--vermelho-f1);
+    box-shadow: 0 0 20px var(--vermelho-f1);
+}
+
+/* ===============================
+     SEÇÃO DE INGRESSOS
+     =============================== */
+
+.ticket-section {
+    background: var(--cinza-aço);
+    padding: 100px 0;
+    text-align: center;
+}
+
+.ticket-section h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: var(--vermelho-f1);
+    margin-bottom: 60px;
+    text-transform: uppercase;
+}
+
+.ticket-card {
+    background: #111;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    transition: all 0.4s ease;
+    padding: 30px;
+}
+
+.ticket-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 25px rgba(208, 2, 27, 0.6);
+    border-color: var(--vermelho-f1);
+}
+
+.ticket-card h4 {
+    font-weight: 700;
+    color: var(--vermelho-f1);
+    margin-bottom: 15px;
+}
+
+.ticket-card p {
+    font-size: 0.95rem;
+    color: #ccc;
+    margin-bottom: 20px;
+}
+
+.ticket-card h5 {
+    color: #fff;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+/* ===============================
+     GALERIA
+     =============================== */
+
+.gallery-section {
+    background: #0d0d0d;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.gallery-section h2 {
+    color: var(--vermelho-f1);
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    margin-bottom: 50px;
+}
+
+.gallery-img {
+    border-radius: 20px;
+    transition: transform 0.5s ease, box-shadow 0.4s ease;
+    filter: grayscale(20%);
+}
+
+.gallery-img:hover {
+    transform: scale(1.06);
+    filter: grayscale(0);
+    box-shadow: 0 0 25px rgba(208, 2, 27, 0.6);
+}
+
+/* ===============================
+     RODAPÉ
+     =============================== */
+
+footer {
+    background: #000;
+    padding: 60px 20px;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+footer p {
+    color: #aaa;
+    margin: 8px 0;
+}
+
+footer a {
+    color: var(--vermelho-f1);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #fff;
+}
+
+/* ===============================
+     RESPONSIVIDADE
+     =============================== */
+
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .btn-glass {
+        padding: 10px 24px;
+        font-size: 0.9rem;
+    }
+
+    .ticket-card {
+        margin-bottom: 20px;
+    }
+}

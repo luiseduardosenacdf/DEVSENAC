@@ -1,0 +1,5 @@
+package br.com.sistemacomercial.controller;
+
+public record ProdutoController() {
+
+}

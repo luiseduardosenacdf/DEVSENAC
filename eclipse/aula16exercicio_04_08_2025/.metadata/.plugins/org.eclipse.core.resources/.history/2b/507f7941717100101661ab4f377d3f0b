@@ -1,0 +1,48 @@
+package aula16exercicio_04_08_2025;
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        String[] produtos = {
+            "X-Burguer", "X-Salada", "X-Bacon", 
+            "Batata Frita", "Refrigerante Lata", 
+            "Suco Natural", "Água Mineral"
+        };
+
+        double[] precos = {10.0, 12.0, 14.0, 8.0, 5.0, 6.0, 3.0};
+        int[] quantidades = new int[produtos.length];
+
+        System.out.println("=== Cardápio da Lanchonete ===");
+        for (int i = 0; i < produtos.length; i++) {
+            System.out.printf("%d. %s - R$ %.2f%n", i + 1, produtos[i], precos[i]);
+        }
+
+        System.out.println("\nInforme a quantidade desejada para cada produto:");
+        for (int i = 0; i < produtos.length; i++) {
+            System.out.print(produtos[i] + ": ");
+            quantidades[i] = scanner.nextInt();
+        }
+
+        double totalGeral = 0;
+        System.out.println("\n=== Relatório Final do Pedido ===");
+        for (int i = 0; i < produtos.length; i++) {
+            if (quantidades[i] > 0) {
+                double subtotal = precos[i] * quantidades[i];
+                System.out.printf("%s - Quantidade: %d - Subtotal: R$ %.2f%n", produtos[i], quantidades[i], subtotal);
+                totalGeral += subtotal;
+            }
+        }
+
+        if (totalGeral > 0) {
+            System.out.printf("Valor total do pedido: R$ %.2f%n", totalGeral);
+        } else {
+            System.out.println("Nenhum produto foi selecionado.");
+        }
+
+        scanner.close();
+    }
+}

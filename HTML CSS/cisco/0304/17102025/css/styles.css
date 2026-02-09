@@ -1,0 +1,164 @@
+/* Reset básico para margens e preenchimentos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+/* Estilo do Header */
+header {
+    background: url('../imagens/background.jpg') no-repeat center center/cover, #333;
+    color: #fff;
+    padding: 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+header .header-content {
+    position: relative;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.6); /* Fundo semi-transparente para melhorar a legibilidade */
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+header .event-logo {
+    width: 100px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+
+header h1 {
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    font-size: 1.2rem;
+}
+
+/* Ajustes no menu de navegação */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.btn-main {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    margin-top: 1rem;
+    background: #007BFF;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.btn-main:hover {
+    background: #0056b3;
+}
+
+/* Estilo da Seção Hero */
+#hero {
+    color: #fff;
+    padding: 4rem 1rem;
+    text-align: center;
+}
+
+.hero-text {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+iframe {
+    margin-top: 1rem;
+    border: 0;
+    border-radius: 8px;
+}
+
+/* Estilo das Seções */
+section {
+    padding: 2rem;
+    margin: 1rem 0;
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+h2 {
+    margin-bottom: 1rem;
+    color: #007BFF;
+}
+
+blockquote {
+    font-style: italic;
+    margin: 1.5rem 0;
+    padding: 1rem;
+    background: #f9f9f9;
+    border-left: 5px solid #ccc;
+}
+
+/* Estilo da Galeria de Imagens */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.gallery img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+/* Estilo da Tabela de Programação */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+}
+
+th, td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background: #007BFF;
+    color: #fff;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Estilo do Rodapé */
+footer {
+    padding: 2rem 1rem;
+    text-align: center;
+    background: #333;
+    color: #fff;
+}

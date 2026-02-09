@@ -1,0 +1,27 @@
+package app;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class UsuarioService {
+
+	private List<String> usuarios;
+	
+	public UsuarioService() {
+		usuarios = new ArrayList<>();
+	}
+	
+	public void cadastrarUsuarios(String nome) {
+		if (nome == null || nome.trim().isEmpty()) {
+			System.out.println("Nome inválido! Não foi possível cadastrar.");
+			return;
+		}
+		usuarios.add(nome);
+		System.out.println("Üsuário '" + nome + "' cadastrado com sucesso!");
+	}
+	
+	public void listarUsuarios() {
+		
+	}
+}
+	

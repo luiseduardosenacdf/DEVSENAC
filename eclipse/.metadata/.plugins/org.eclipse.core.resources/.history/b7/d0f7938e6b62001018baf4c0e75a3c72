@@ -1,0 +1,17 @@
+package aula03_16_07_2025;
+
+public class main {
+
+	public static void main(String[] args) {
+		Pessoa pessoa1 = new Pessoa();
+		pessoa1.nome = "Luis Eduardo";
+		pessoa1.cpf = "048.754.891-45";
+		pessoa1.genero = 'M';
+		pessoa1.idade = 28;
+		pessoa1.altura = 1.78;
+		
+		pessoa1.apresentar();
+		
+	}
+
+}
