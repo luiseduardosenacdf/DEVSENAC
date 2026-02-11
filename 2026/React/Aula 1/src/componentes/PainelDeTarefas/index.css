@@ -1,0 +1,31 @@
+.painel {
+  width: min(100%, 720px);
+  background: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: var(--sombra-card);
+}
+
+.painel__titulo {
+  margin: 0 0 18px;
+  font-size: clamp(1.4rem, 2.3vw, 1.9rem);
+  line-height: 1.15;
+}
+
+.painel__vazio {
+  margin: 18px 0 0;
+  padding: 12px 14px;
+  text-align: center;
+  color: var(--cor-texto-secundario);
+  background: #f9fbff;
+  border: 1px dashed var(--cor-borda);
+  border-radius: 12px;
+}
+
+@media (max-width: 640px) {
+  .painel {
+    padding: 18px;
+    border-radius: 14px;
+  }
+}
