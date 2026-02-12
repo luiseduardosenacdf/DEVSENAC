@@ -76,3 +76,10 @@ src/
 - persistencia das tarefas no navegador (LocalStorage)
 - filtros por status (todas, pendentes, concluidas)
 - testes automatizados para fluxos principais
+
+## Orientador Senac
+
+Hudson Neves
+
+
+
