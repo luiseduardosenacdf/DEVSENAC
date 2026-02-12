@@ -1,0 +1,204 @@
+.idt-item {
+  --delay: 0ms;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  background: var(--surface-raised);
+  padding: 0.8rem;
+  display: grid;
+  gap: 0.65rem;
+  animation: idt-item-enter 360ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  animation-delay: var(--delay);
+}
+
+.idt-completed {
+  border-color: rgba(15, 118, 110, 0.25);
+}
+
+.idt-mainRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+}
+
+.idt-checkboxLabel {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.22rem;
+}
+
+.idt-checkboxLabel input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+}
+
+.idt-customCheck {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--border-strong);
+  border-radius: 6px;
+  display: inline-block;
+  background: #ffffff;
+  transition:
+    background var(--transition-fast),
+    border-color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.idt-checkboxLabel input:checked + .idt-customCheck {
+  border-color: var(--accent-strong);
+  background: linear-gradient(180deg, var(--accent), var(--accent-strong));
+}
+
+.idt-checkboxLabel input:checked + .idt-customCheck::after {
+  content: "";
+  display: block;
+  width: 5px;
+  height: 9px;
+  border-right: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+  transform: translate(6px, 2px) rotate(45deg);
+}
+
+.idt-contentArea {
+  min-width: 0;
+  flex: 1;
+}
+
+.idt-textButton {
+  border: none;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  color: var(--text-primary);
+  font-size: 0.98rem;
+  line-height: 1.4;
+  text-align: left;
+  width: 100%;
+  cursor: pointer;
+}
+
+.idt-completed .idt-textButton {
+  color: var(--text-soft);
+  text-decoration: line-through;
+  text-decoration-thickness: 1.5px;
+}
+
+.idt-editor {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.idt-editInput {
+  width: 100%;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xs);
+  padding: 0.52rem 0.62rem;
+  background: #ffffff;
+  color: var(--text-primary);
+}
+
+.idt-inlineActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.idt-footerRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 0.8rem;
+}
+
+.idt-metadata {
+  display: grid;
+  gap: 0.2rem;
+  color: var(--text-soft);
+  font-size: 0.8rem;
+}
+
+.idt-rowActions {
+  display: flex;
+  gap: 0.45rem;
+}
+
+.idt-saveButton,
+.idt-ghostButton,
+.idt-removeButton {
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xs);
+  min-height: 34px;
+  padding: 0.4rem 0.64rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  background: #ffffff;
+  transition:
+    border-color var(--transition-fast),
+    background var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.idt-saveButton {
+  border-color: transparent;
+  color: #ffffff;
+  background: linear-gradient(180deg, var(--accent), var(--accent-strong));
+}
+
+.idt-ghostButton:hover,
+.idt-removeButton:hover {
+  border-color: var(--border-strong);
+}
+
+.idt-removeButton {
+  color: var(--danger);
+  border-color: rgba(185, 28, 28, 0.25);
+  background: rgba(254, 242, 242, 0.8);
+}
+
+.idt-confirmRemove {
+  color: #ffffff;
+  border-color: transparent;
+  background: linear-gradient(180deg, #b45309, #92400e);
+}
+
+.idt-statusMessage,
+.idt-errorMessage {
+  margin: 0;
+  font-size: 0.82rem;
+}
+
+.idt-statusMessage {
+  color: #92400e;
+}
+
+.idt-errorMessage {
+  color: var(--danger);
+}
+
+@keyframes idt-item-enter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 720px) {
+  .idt-footerRow {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .idt-rowActions {
+    justify-content: flex-end;
+  }
+}

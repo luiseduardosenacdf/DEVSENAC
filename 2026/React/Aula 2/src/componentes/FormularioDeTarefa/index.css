@@ -1,0 +1,89 @@
+.fdt-form {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.fdt-label {
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.fdt-controls {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.65rem;
+}
+
+.fdt-input {
+  width: 100%;
+  min-height: 44px;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 0.7rem 0.85rem;
+  background: var(--surface-raised);
+  color: var(--text-primary);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.fdt-input::placeholder {
+  color: var(--text-soft);
+}
+
+.fdt-input:focus-visible {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.15);
+}
+
+.fdt-submitButton {
+  min-width: 130px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  padding: 0.72rem 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: linear-gradient(180deg, var(--accent), var(--accent-strong));
+  transition:
+    transform var(--transition-fast),
+    filter var(--transition-fast),
+    opacity var(--transition-fast);
+}
+
+.fdt-submitButton:hover:not(:disabled) {
+  filter: brightness(1.03);
+  transform: translateY(-1px);
+}
+
+.fdt-submitButton:disabled {
+  opacity: 0.55;
+}
+
+.fdt-metaRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+  font-size: 0.84rem;
+  color: var(--text-soft);
+}
+
+.fdt-hint,
+.fdt-counter {
+  margin: 0;
+}
+
+.fdt-error {
+  margin: 0;
+  color: var(--danger);
+  font-size: 0.86rem;
+}
+
+@media (max-width: 680px) {
+  .fdt-controls {
+    grid-template-columns: 1fr;
+  }
+
+  .fdt-submitButton {
+    width: 100%;
+  }
+}

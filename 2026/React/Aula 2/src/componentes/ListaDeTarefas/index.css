@@ -1,0 +1,27 @@
+.ldt-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.7rem;
+}
+
+.ldt-emptyState {
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--radius-sm);
+  padding: 1.2rem;
+  background: rgba(255, 255, 255, 0.45);
+}
+
+.ldt-title {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  color: var(--text-primary);
+}
+
+.ldt-description {
+  margin: 0.42rem 0 0;
+  max-width: 52ch;
+  color: var(--text-muted);
+}
